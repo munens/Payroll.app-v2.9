@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payroll</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.min.css" />
+    <link rel="stylesheet" href="assets/css/app.min.css" />
+    <link rel="shortcut icon" href="assets/images/caytree-marketplace-logo.png" />
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/Chart.min.js" type="text/javascript"></script>
+    <script src="assets/js/velocity.min.js" type="text/javascript"></script>
+    <script src="assets/js/velocity.ui.min.js" type="text/javascript"></script>
+    <script src="assets/js/moment.js" type="text/javascript"></script>
+    <script src="../client.js"></script>
+    <script src="views/appmain/appmain.js"></script>
+    <script src="views/staff.add/staff.add.js"></script>
+    <script src="views/staff.add2/staff.add2.js"></script>
+    <script src="views/onboarding/onboarding.js"></script>
+    <script src="views/staff/staff.js"></script>
+    <script src="views/payroll/payroll.js"></script>
+    <script src="views/payroll.add/payroll.add.js"></script>
+    <script src="views/payroll.view/payroll.view.js"></script>
+    <script src="views/payroll.review/payroll.review.js"></script>
+    <script src="views/payroll.pay/payroll.pay.js"></script>
+    <script src="views/staff.view/staff.view.js"></script>
+    <script src="views/staff.edit/staff.edit.js"></script>
+    <script src="views/company.settings/company.settings.js"></script>
+</head>
+<body ng-app="clientApp">
+    <div class="container-fluid app-page">
+
+
+        
+        
+        <section ng-view>
+
+        </section>
+
+
+
+    </div>
+
+<!--Section for scripts below:-->
+<!--<div ng-show="on_appmain">
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
+
+    // Data for chart
+    var data = [
+        {
+            value: 300000,
+            color:"#F7464A",
+            highlight: "#FF5A5E",
+            label: "Employee Salaries"
+        },
+        {
+            value: 50000,
+            color: "#46BFBD",
+            highlight: "#5AD3D1",
+            label: "Other"
+        },
+        {
+            value: 100000,
+            color: "#FDB45C",
+            highlight: "#FFC870",
+            label: "Statutory Taxes"
+        }
+    ];
+
+
+    // Chart responsive
+    Chart.defaults.global.responsive = true;
+
+    // Doughnut chart
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myDoughnutChart = new Chart(ctx).Doughnut(data, {
+        segmentShowStroke : false,
+        segmentStrokeColor : "#fff",
+        segmentStrokeWidth : 0,
+        maintainAspectRatio: true,
+        percentageInnerCutout : 50,
+        animate: false,
+        legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend padding-lg list-inline h5\"><% for (var i=0; i<segments.length; i++){%><li class=\"padding-bottom-sm\"><i class=\"fa fa-square \" style=\"color:<%=segments[i].fillColor%>\"></i> <%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
+        tooltipTitleFontFamily: "inherit",
+
+
+    });
+
+    $('#donutLegend').html(myDoughnutChart.generateLegend());
+
+
+</script>-->
+</div>
+</body>
+</html>

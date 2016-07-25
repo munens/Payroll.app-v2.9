@@ -1,0 +1,84 @@
+<section ng-controller="signUpController">
+    <div class="container-fluid">
+
+        <section class="row header margin-bottom-xl bg-white border-bottom">
+            <div class="col-md-5 col-md-offset-1 padding-top-md">
+                <a href="index.html" class="h3 no-pad">Caytree</a>
+            </div>
+            <div class="col-md-5 text-right padding-top-sm">
+                <ul class="list-unstyled list-inline va-middle">
+                    <li><a href="log-in.html" class="btn btn-hd btn-primary strong">Log in</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="row main margin-bottom-xl">
+            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
+                <section class="row margin-bottom-lg">
+                    <div class="col-md-1">
+                        <div class="h3 text-center no-pad step">1</div>
+                    </div>
+                    <div class="col-md-9">
+                        <h2 class="margin-top-sm">Create a Caytree account</h2>
+                    </div>
+                </section>
+
+                <section class="row">
+                    <form class="col-md-10 col-md-offset-1">
+
+                        <!-- Input fields format --!
+                        <input class="col-md-12 input hidden" placeholder="last name">
+
+                        <div class="input-group-hd">
+                            <input class="col-md-3 input" placeholder="first name">
+                            <input class="col-md-4 input" placeholder="last  name">
+                        </div>
+
+                        -->
+
+                        <div class="input-group-hd">
+                            <input ng-model="Account.FirstName" class="col-md-6 input capitalize" placeholder="first name">
+                            <input ng-model="Account.LastName" class="col-md-6 input capitalize" placeholder="last name">
+                        </div>
+
+                        <input ng-model="Account.Phoneno" class="col-md-4 input" type="text" placeholder="phone number">
+                        <input ng-model="Account.Email" class="col-md-7 col-md-offset-1 input" type="email" placeholder="email">
+
+                        <div class="height-xs"></div>
+
+                        <input ng-model="Account.username" class="col-md-5 input" type="text" placeholder="username">
+                        <input ng-model="Account.password" class="col-md-6 col-md-offset-1 input" type="password" placeholder="password">
+
+                        <div class="height-xs"></div>
+                        <ul class="list-inline text-right">
+                            <li><a href="../index.html" class="btn btn-hd btn-md">Cancel</a></li>
+                            <li><a href="#/onboarding" ng-click="update(Account)" class="btn btn-hd btn-md btn-accent strong">Add company details <i class="fa fa-arrow-right text-white"></i></a></li>
+                        </ul>
+                    </form>
+                </section>
+            </div>
+        </section>
+
+
+
+
+        <!-- Footer -->
+        <section class="row padding-top-md padding-bottom-sm border-top-light border-bottom-light bg-white hidden" id="footer">
+            <div class="container">
+                <ul class="list-inline">
+                    <li>&copy; 2015 | <a href="#" class="strong">Caytree Partners</a></li>
+                    <li>All rights reserved.</li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+        </section>
+
+
+
+    </div>
+
+</section>
+
+
+

@@ -1,0 +1,192 @@
+﻿<ng-include src="'nav.html'"></ng-include>
+<section class="app-main">
+
+    <section class="app-main-index">
+
+        <!-- TODO: Template: View Summary [staff] -->
+        <section class="app-summary padding-top-md padding-bottom-lg col-sm-12">
+
+            <div class="theme theme-bg-01 full-width">
+                </div>
+
+
+                <div class="row padding-top-md">
+                    <div class="col-sm-12">
+                        <div class="col-sm-12">
+                            <a href="#/companysettings" class="text-white h5 padding-bottom-md">{{CompanyName}}</a>
+                            <h1> Today, <small class="text-white">{{date}}</small></h1>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row padding-top-xl">
+                    <div class="col-sm-4 col-lg-3">
+
+                        <div class="col-sm-12">
+                            <a href="#" class="h2">
+                                Payroll</ a>
+                                <hr class="full-width" />
+
+                                <ul class="list-unstyled">
+                                    <li class="padding-bottom-sm"><h4>Next run in <strong> {no. of days until next payroll} days</ strong></h4 ></li>
+                                    <li class="padding-bottom-md"><h4>Total payroll: {calculate total payroll}</h4></ li>
+                                    <li class="">
+                                        <a href="#/payrollreview" class="strong btn app-bg-accent btn-hd">Review this cycle </a>
+                                    </li>
+                                </ul>
+                                <a href="#/payrolladd" class="margin-top-lg strong btn btn-hd app-bg-green">
+                                    Add a new
+                                    payroll cycle
+                                </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-3 border-left border-white">
+                        <ul class="list-unstyled">
+                            <li class="padding-bottom-lg">
+                                <h3 class=""> Net Payments</h3>
+                                <ul class="list-unstyled">
+                                    <li> Employees: {Total payments to employees}</li>
+                                    <li> Contractors: {Total payments to contractors}</li>
+                                    <li class="padding-top-sm padding-bottom-sm"><hr class="no-pad" /></ li>
+                                    <li><h4>Ksh. {Total payments to employees and contractors}</h4></ li>
+                                </ul>
+                            </li>
+                            <li class="padding-bottom-lg">
+                                <h3 class="">
+                                    Taxes</ h3>
+                                    <ul class="list-unstyled">
+                                        <li> PAYE: Ksh. {PAYE}</li>
+                                        <li> NHIF: Ksh. {NHIF tax}</li>
+                                        <li> NSSF: Ksh. {NSSF tax}</li>
+                                        <li> Withholding: Ksh. {?}</li>
+                                        <li class="padding-top-sm padding-bottom-sm"><hr class="no-pad" /></ li>
+                                        <li>
+                                            <h4>Ksh. {Total Taxes(Payroll)} </h4>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li class="padding-bottom-lg hidden">
+                                <h3 class=""> Bonus and Deductions</h3>
+                                <ul class="list-unstyled">
+                                    <li> No bonus</li>
+                                    <li> No deductions</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <hr />
+                                <h6> Total payroll</h6>
+                                <h3> Ksh. {Total payroll of company}</h3>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-3">
+                        <div class="row text-center">
+                            <canvas id="myChart" class="full-width height-md"></canvas>
+                            <div class="padding-top-sm" id="donutLegend"></div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="row margin-top-md">
+                    <div class="col-sm-12">
+                        <div class="col-sm-12">
+                            <a href="#/staff" class="h2">
+                                Staff</ a>
+                                <ul class="list-unstyled h4">
+                                    <li> {{noOfEmployees}} employees</li>
+                                    <li> {{noOfContractors}} contractors</li>
+                                    <li class="margin-top-md">
+                                        <a href="#/staff" class="btn btn-hd app-bg-accent strong">View all staff </a>
+                                        <a href="#/staffadd" class="strong btn btn-hd app-bg-green">Add Staff</a>
+                                </ul>
+                        </div>
+
+                    </div>
+                
+
+                <div class="row margin-top-xl">
+                    <div class="col-sm-12">
+                        <div class="col-sm-12">
+                            <a href="#/companysettings" class="h2">
+                                Company</ a>
+                                <ul class="list-unstyled">
+                                    <li class="margin-top-md"> KRA PIN: <strong> {{KRAPin}}</strong>. Due by 9th of following month </li>
+                                    <li> NHIF Number: <strong> {{NHIFno}}</ strong>. Due by {Date of NHIF payment}th of following month </li>
+                                    <li> NSSF Number: <strong> {{NSSFno}}</ strong>. Due by {Date of NSSF payment}th of following month </li>
+
+                                    <li class="margin-top-md">
+                                        <a href="#/companysettings" class="strong btn app-bg-accent btn-hd">Edit Company Details </a>
+
+                                </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="app-quick row margin-top-lg col-sm-12 hidden">
+            <div class="col-sm-12">
+                <div class="col-sm-12 padding-bottom-md">
+                    <h3 class="strong"> November Pay Cycle</h3>
+                    <h5> Date to run: 23 November 2015</h5>
+                </div>
+                <div class="col-sm-3">
+                    <h3 class="strong">
+                        Staff</ h3>
+                        <ul class="list-unstyled">
+                            <li> 23 salaried employees</li>
+                            <li> 3 contractors</li>
+                            <li> 3 workers</ li>
+                        </ul>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="strong"> Staff Net Payment</h3>
+                    <ul class="list-unstyled">
+                        <li> Ksh. 239,000 for employees</li>
+                        <li> Ksh. 29,000 for contractors</li>
+                        <li> Ksh. 200,000 for workers</li>
+                        <li> Ksh. 8,000 in deductions</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="strong"> Statutory Tax</h3>
+                    <ul class="list-unstyled">
+                        <li> KRA - Ksh. 89,000</li>
+                        <li> NHIF - Ksh. 32,900</li>
+                        <li> NSSF - Ksh. 2,980</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 class="strong"> Other Payments</h3>
+                    <ul class="list-unstyled">
+                        <li> Deductions - Ksh. 89,000</li>
+                        <li> Bonuses - Ksh. 32,900</li>
+                        <li> Rent - Ksh. 2,980</li>
+                        <li> Electricity - Ksh. 2,980</li>
+                        <li> Misc - Ksh. 2,980</li>
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <div class="app-border-top padding-top-md full-width"></div>
+                    <h3 class="strong"> Ksh. 600,890</h3>
+                    <h5 class=""> Total amount to pay</h5>
+                </div>
+    
+            </div>
+
+        </section>
+
+    </section>
+
+</section>
+

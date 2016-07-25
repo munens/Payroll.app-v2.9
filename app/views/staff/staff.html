@@ -1,0 +1,187 @@
+<ng-include src="'nav.html'"></ng-include>
+    <section class="app-main" ng-controller="staffController">
+
+        <section ng-init="reloadPage()" class="app-main-summary">
+            <section class="col-sm-12 height-full padding-top-lg hidden">
+
+                <div class="col-sm-6 margin-bottom-md">
+                    <h2>All Payrolls</h2>
+                </div>
+                <div class="col-sm-6 app-payroll-actions">
+                    <ul class="list-inline pull-right">
+                        <li><a href="#" class="btn btn-primary">View</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 app-payroll-all margin-top-lg">
+                    <table class="table table-responsive table-hover">
+                        <tr>
+                            <th>Name</th>
+                            <th class="text-right">Staff</th>
+                            <th class="text-right">Salary Payments</th>
+                            <th class="text-right">KRA</th>
+                            <th class="text-right">NHIF</th>
+                            <th class="text-right">NSSF</th>
+                            <th class="text-right">Other Payments</th>
+                            <th class="text-right" colspan="2">Total</th>
+                        </tr>
+
+                        <tr>
+                            <td><a href="">November 2015 Payroll</a></td>
+                            <td class="text-right">26</td>
+                            <td class="text-right">1,300,900</td>
+                            <td class="text-right">20,900</td>
+                            <td class="text-right">3,400</td>
+                            <td class="text-right">900</td>
+                            <td class="text-right">20,450</td>
+                            <td class="text-right">1,500,000</td>
+                            <td class="text-right"><a href=""><i class="fa fa-caret-down"></i></a></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+
+            </section>
+
+            <section class="col-sm-12">
+                <div class="row padding-lg app-content-header app-bg-white border-bottom-light">
+                    <div class="col-sm-6">
+                        <h2>Staff Listing</h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#/staffadd" class="pull-right btn btn-primary btn-lg strong">Add New Staff</a>
+                    </div>
+                </div>
+
+                <div ng-hide="!staffExist" class="padding-lg ng-hide">
+                    
+                    <table  class="table table-responsive app-table-hd table-hover">
+                    <thead class="h4">
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Department</th>
+                                <th class="text-right">Gross Salary</th>
+                            </tr>
+                        </thead>
+
+                        <tbody >
+                            <tr ng-repeat="s in itemsInTable" >
+                                <td><a href="#/staff/view/{{s._id}}"><h4>{{s.FirstName}} {{s.LastName}}</h4></a></td>
+                                <td><span>{{s.StaffType}}</span></td>
+                                <td><span>{{s.StaffStatus}}</span></td>
+                                <td><span>{{s.Role}}</span></td>
+                                <td class="text-right"><span>Ksh. {{s.GrossPay}}</span></td>
+                                <td class="text-center"><a href=""><i class="fa fa-caret-down"></i></a>                             </td>
+                            </tr>
+
+                            <!--<tr title="Pending">
+                                <td><a href="#/staffview"><h4>Munene Kaumbutho</h4></a></td>
+                                <td><span>dog</span></td>
+                                <td><span>cat</span></td>
+                                <td><span>worm</span></td>
+                                <td class="text-right"><span>Ksh. john</span></td>
+                                <td class="text-center"><a href=""><i class="fa fa-caret-down"></i></a></td>
+                            </tr>-->
+                        </tbody>
+
+
+                    </table>
+
+                    
+
+                </div>
+
+                <div ng-show="!staffExist" class="container">
+                    <h3>No items available at this time.</h3>
+                </div>
+                
+                
+            </section>
+        </section>
+
+    </section>
+
+    <!-- TODO: Template: Summary Bar -->
+    <section class="app-side app-border-left-light">
+
+        <div class="header padding-md">
+            <h3 class="no-pad">Staff Summary</h3>
+			<table class="table table-responsive app-table-hd">
+                            
+							<tbody>
+							   <tr class="bg-none">
+                                <td colspan="2" class="padding-lg">&nbsp;</td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h4>Staff by Type</h4></td>
+                                <td class="text-right"><h4></h4></td>
+                            </tr>
+								 <tr class="bg-none">
+									<td><h5>Employees</h5></td>
+									<td class="text-right"><h5>{{totalEmployees()}}</h5></td>
+								</tr>
+								<tr class="bg-none">
+									<td><h5>Contractors</h5></td>
+									<td class="text-right"><h5>{{totalContractors()}}</h5></td>
+								</tr>
+                         
+						                             <tr class="bg-none">
+                                <td colspan="2" class="padding-lg">&nbsp;</td>
+                            </tr>
+
+                            <tr class="bg-none">
+                                <td><h4>Staff by Status</h4></td>
+                                <td class="text-right"><h4></h4></td>
+                            </tr>
+								<tr class="bg-none">
+									<td><h5>Active</h5></td>
+									<td class="text-right"><h5>{{totalActive()}}</h5></td>
+								</tr>
+								<tr class="bg-none">
+									<td><h5>Inactive</h5></td>
+									<td class="text-right"><h5>{{totalInactive()}}</h5></td>
+								</tr>
+
+                            <tr class="bg-none">
+                                <td colspan="2" class="padding-lg">&nbsp;</td>
+                            </tr>
+
+
+                            <!--<tr class="bg-none">
+                                <td><h4>Staff by Department </h4></td>
+                                <td class="text-right"><h4></h4></td>
+                            </tr>
+								<tr class="bg-none">
+									<td><h5>Finance</h5></td>
+									<td class="text-right"><h5>3</h5></td>
+								</tr>
+								<tr class="bg-none">
+									<td><h5>Engineering</h5></td>
+									<td class="text-right"><h5>6</h5></td>
+								</tr>
+								<tr class="bg-none">
+									<td><h5>Marketing</h5></td>
+									<td class="text-right"><h5>8</h5></td>
+								</tr>
+								<tr class="bg-none">
+									<td><h5>Other</h5></td>
+									<td class="text-right"><h5>5</h5></td>
+								</tr>-->
+							
+                            <tr class="bg-none">
+                                <td colspan="2" class="padding-lg">&nbsp;</td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h2 class="strong">Total Staff</h2></td>
+                                <td class="text-right"><h2 class="strong">{{totalStaff}}</h2></td>
+                            </tr>
+                            </tbody>
+                        </table>
+        </div>
+
+    </section>
+
+

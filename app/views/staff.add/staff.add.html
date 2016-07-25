@@ -1,0 +1,265 @@
+<ng-include src="'nav.html'"></ng-include>    
+<section ng-controller="staffAddController" class="app-main">
+
+        <section class="app-main-summary app-bg-white">
+            <section class="col-sm-12 padding-lg">
+                <form class="row">
+                    <div class="row padding-lg padding-top-xs">
+                        <div class="col-sm-2">
+                            <h1 class="">Add staff</h1>
+                        </div>
+                    </div>
+
+
+                    <div class="row padding-lg">
+                        <div class="col-sm-2">
+                            <h3>Personal Details</h3>
+                        </div>
+                        <div class="col-sm-9 margin-bottom-lg">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input ng-model="s.FirstName" class="form-control input-lg" type="text" placeholder="First Name"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Middle Name</label>
+                                    <input ng-model="s.MiddleName" class="form-control input-lg" type="text" placeholder="Middle Name"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input ng-model="s.LastName" class="form-control input-lg" type="text" placeholder="Last Name"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input ng-model="s.Phoneno" class="form-control" type="number" placeholder="Phone number"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Work email</label>
+                                    <input ng-model="s.Email" class="form-control" type="email" placeholder="Work email"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input ng-model="s.Address" class="form-control" type="text" placeholder="Mailing/Postal Address"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>ID Number</label>
+                                    <input ng-model="s.IDno" class="form-control" type="number" placeholder="ID Number"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input ng-model="s.DOB" class="form-control" type="date" placeholder="DOB"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row padding-lg app-bg-grey-light">
+                        <div class="col-sm-2">
+                            <h3>Tax Details</h3>
+                        </div>
+                        <div class="col-sm-9 margin-bottom-xl">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <label>KRA PIN number</label>
+                                    <input ng-model="s.KRAPinno" class="form-control" type="text" placeholder="eg. A2398742324H"/>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>NHIF Number</label>
+                                    <input ng-model="s.NHIFno" type="number" class="form-control" placeholder="eg. 2398742"/>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>NSSF Number</label>
+                                    <input ng-model="s.NSSFno" type="number" class="form-control" placeholder="eg. 2398742"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row padding-lg">
+                        <div class="col-sm-2">
+                            <h3>Company Details</h3>
+                        </div>
+                        <div class="col-sm-9 margin-bottom-lg">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Role in the company</label>
+                                    <input ng-model="s.Role" class="form-control" type="text" placeholder="eg. Senior Accountant"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Staff Type</label>
+                                    <select ng-model="s.StaffType" class="form-control">
+                                        <option>Employee</option>
+                                        <option>Contractor</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Staff Status</label>
+                                    <select ng-model="s.StaffStatus" class="form-control">
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input ng-model="s.StartDate" class="form-control" type="date" placeholder="Employee Since"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row padding-lg app-bg-grey-light">
+                        <div class="col-sm-2">
+                            <h3>Payment Details</h3>
+                        </div>
+                        <div class="col-sm-9 margin-bottom-xl">
+                            <div class="col-sm-6">
+                                <div class="input-group input-group-lg">
+                                    <span class="app-bg-grey-light input-group-addon border-light">Gross Pay</span>
+                                    <input ng-model="s.GrossPay" class="form-control" type="number" placeholder="Amount"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9 col-sm-offset-2 margin-bottom-md">
+                            <div class="col-sm-3">
+                                <label>Select payment method</label>
+                                <select ng-model="s.PaymentMethod" class="form-control">
+                                    <option selected>Bank</option>
+                                    <option>Cash</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9 col-sm-offset-2 margin-bottom-xl">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <label>Bank Name</label>
+                                    <input ng-model="s.BankName" type="text" class="form-control" placeholder="eg. Barclays Bank"/>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>Bank Branch</label>
+                                    <input ng-model="s.BankBranch" type="text" class="form-control" placeholder="eg. Westlands"/>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>Account Number</label>
+                                    <input ng-model="s.Accountno" type="number" class="form-control" placeholder="123456789000"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row padding-lg">
+                        <div class="col-sm-11 clearfix margin-bottom-xl text-right">
+                            <!--<button type="submit" href="#/staff" class="btn btn-hd strong margin-right-md">Cancel</button>-->
+                            <!--<button  class="btn btn-hd btn-md btn-primary strong"><a href="#/staff">Add Staff</a></button>-->
+                            <a href="#/staff" class="btn btn-hd strong margin-right-md">Cancel</a>
+                            <a type="button" ng-click="addStaff()" href="#/staff" class="pull-right btn btn-primary btn-lg strong">Add Staff</a>
+                        </div>
+                    </div>
+
+                </form>
+            </section>
+        </section>
+
+    </section>
+
+    <!-- TODO: Template: Staff Details -->
+    <section class="app-side app-border-left-light">
+
+    <div class="header padding-md">
+            <h3 class="text-center padding-bottom-lg padding-top-md">Staff Details</h3>
+            <dl class="dl-horizontal">
+                <dt>Phone Number</dt>
+                <dd>07237623846</dd>
+
+                <dt>Work Email</dt>
+                <dd>david@example.com</dd>
+
+                <dt>ID Number</dt>
+                <dd></dd>
+
+                <dt>Date of Birth</dt>
+                <dd></dd>
+
+                <dt>Address</dt>
+                <dd>David Warehouse</dd>
+            </dl>
+            <dl class="dl-horizontal margin-top-lg">
+                <dt>
+                <h4>Company Details</h4></dt>
+                <dd>
+                    <div class="border-top margin-top-sm full-width"></div>
+                </dd>
+
+                <dt>Role</dt>
+                <dd>Senior Accountant</dd>
+
+                <dt>Staff Type</dt>
+                <dd></dd>
+
+                <dt>Status</dt>
+                <dd></dd>
+
+                <dt>Start Date</dt>
+                <dd></dd>
+
+            </dl>
+            <dl class="dl-horizontal margin-top-lg">
+                <dt>
+                <h4>Tax Details</h4></dt>
+                <dd>
+                    <div class="border-top margin-top-sm full-width"></div>
+                </dd>
+
+                <dt>KRA PIN Number</dt>
+                <dd>234343435345</dd>
+
+                <dt>NHIF</dt>
+                <dd>234335345</dd>
+
+                <dt>NSSF</dt>
+                <dd>2343</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                <h4>Payment Details</h4></dt>
+                <dd>
+                    <div class="border-top margin-top-sm full-width"></div>
+                </dd>
+
+                <dt>Bank Details</dt>
+                <dd>Barclays Bank</dd>
+                <dd>Westlands Branch</dd>
+                <dd>234343435345</dd>
+            </dl>
+        </div>
+
+    </section>
+
+

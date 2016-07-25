@@ -1,0 +1,132 @@
+<ng-include src="'nav.html'"></ng-include> 
+   <section ng-controller="companySettingsController" class="app-main">
+
+        <section class="app-main-index app-bg-white">
+            <section class="col-sm-12 padding-lg">
+                <form class="row">
+                    <div class="row padding-lg padding-top-xs">
+                        <div class="col-sm-12">
+                            <h1 class="">Edit Company Details</h1>
+                        </div>
+                    </div>
+
+                    <div class="row padding-lg">
+                        <div class="col-sm-2">
+                            <h3>Company</h3>
+                        </div>
+                        <div class="col-sm-9 margin-bottom-lg">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input ng-model="Account.Company.Name" class="form-control input-lg" type="text" placeholder="Name"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Company Phone</label>
+                                    <input ng-model="Account.Company.Phoneno" class="form-control" type="text" placeholder="Phone Number"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Company Email</label>
+                                    <input ng-model="Account.Company.Email" class="form-control" type="email" placeholder="Company Email"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Postal Address</label>
+                                    <input ng-model="Account.Company.Address" class="form-control" type="text" placeholder="Mailing/Postal Address"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label>Branch Name</label>
+                                <input ng-model="Account.Company.Branch" class="form-control" type="text" placeholder="eg. A2398742324H"/>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Location</label>
+                                <input ng-model="Account.Company.Location" type="text" class="form-control" placeholder=""/>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>County</label>
+                                <input  type="text" class="form-control" placeholder=""/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row padding-lg app-bg-grey-light">
+                        <div class="col-sm-2">
+                            <h3>Payment Account</h3>
+                        </div>
+                        <div class="col-sm-9 margin-bottom-lg">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Bank</label>
+                                    <input ng-model="Account.Company.County" class="form-control" type="text" placeholder=""/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Branch</label>
+                                    <input ng-model="Account.Company.Branch" class="form-control" type="text" placeholder=""/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Account Number</label>
+                                    <input ng-model="Account.Company.Accountno" class="form-control" type="text" placeholder=""/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row padding-lg">
+                        <div class="col-sm-2">
+                            <h3>Tax Information</h3>
+                        </div>
+                        <div class="col-sm-9 margin-bottom-lg">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>KRA PIN</label>
+                                    <input ng-model="Account.Company.KRAPinno" class="form-control" type="text" placeholder=""/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>NHIF Number</label>
+                                    <input ng-model="Account.Company.NHIFno" class="form-control" type="text" placeholder=""/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>NSSF Number</label>
+                                    <input ng-model="Account.Company.NSSFno" class="form-control" type="text" placeholder=""/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row padding-lg">
+                        <div class="col-sm-11 clearfix margin-bottom-xl text-right">
+                        <!--<button href="#/staffview" class="btn btn-hd strong margin-right-md">Cancel</button>-->
+                            <a href="#/appmain" ng-click="update()" class="btn btn-hd btn-md btn-primary strong">Update Info</a>
+                        </div>
+                    </div>
+
+                </form>
+            </section>
+        </section>
+
+    </section>
+

@@ -1,0 +1,58 @@
+﻿<section ng-controller="payrollReviewController"> class="app-main">
+
+    <section class="app-main-summary app-bg-white">
+        <section class="col-sm-12 padding-lg">
+            <!--<form class="row">-->
+                
+            <div ng-hide="!staffExist" class="padding-lg ng-hide">
+
+                <table class="table table-responsive app-table-striped table-hover">
+                    <thead class="h4">
+                        <tr>
+                            <!--<th><input class="" type="checkbox" /></th>-->
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Department</th>
+                            <th class="text-right">Gross Salary</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="s in staff">
+                            <td><input ng-model="inpaycycle" ng-click="updateSelection($event, s._id)" class="" type="checkbox" name="staffcheck" /></td>
+                            <td><a href="#/staff/view/{{s._id}}"><h4>{{s.FirstName}} {{s.LastName}}</h4></a></td>
+                            <td><span>{{s.StaffType}}</span></td>
+                            <td><span>{{s.StaffStatus}}</span></td>
+                            <td><span>{{s.Role}}</span></td>
+                            <td class="text-right"><span>Ksh. {{s.GrossPay}}</span></td>
+                            <td class="text-center"><a href=""><i class="fa fa-caret-down"></i></a>                             </td>
+                        </tr>
+
+                        <!--<tr title="Pending">
+                    <td><a href="#/staffview"><h4>Munene Kaumbutho</h4></a></td>
+                    <td><span>dog</span></td>
+                    <td><span>cat</span></td>
+                    <td><span>worm</span></td>
+                    <td class="text-right"><span>Ksh. john</span></td>
+                    <td class="text-center"><a href=""><i class="fa fa-caret-down"></i></a></td>
+                </tr>-->
+                    </tbody>
+
+
+                </table>
+
+
+
+            </div>
+
+            <div ng-show="!staffExist" class="container">
+                <h3>No items available at this time.</h3>
+            </div>
+
+                
+                      
+            <!--</form>-->
+        </section>
+    </section>
+</section>

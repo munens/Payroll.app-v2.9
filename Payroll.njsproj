@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Payroll</Name>
+    <RootNamespace>Payroll</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>5d0902a4-351e-4448-a5e3-f0f3cd9e578f</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\assets\js\app.js" />
+    <Compile Include="app\assets\js\bootstrap.js" />
+    <Compile Include="app\assets\js\bootstrap.min.js" />
+    <Compile Include="app\assets\js\Chart.min.js" />
+    <Compile Include="app\assets\js\jquery-1.11.3.min.js" />
+    <Compile Include="app\assets\js\jquery-2.1.4.min.js" />
+    <Compile Include="app\assets\js\modernizr-custom.js" />
+    <Compile Include="app\assets\js\npm.js" />
+    <Compile Include="app\assets\js\velocity.min.js" />
+    <Compile Include="app\assets\js\velocity.ui.min.js" />
+    <Compile Include="app\client.js" />
+    <Compile Include="app\views\appmain\appmain.js" />
+    <Compile Include="app\views\company.settings\company.settings.js" />
+    <Compile Include="app\views\login\login.js" />
+    <Compile Include="app\views\onboarding\onboarding.js" />
+    <Compile Include="app\views\payment.add\payment.add.js" />
+    <Compile Include="app\views\payroll.add\payroll.add.js" />
+    <Compile Include="app\views\payroll.edit\payroll.edit.js" />
+    <Compile Include="app\views\payroll.pay\payroll.pay.js" />
+    <Compile Include="app\views\payroll.review\payroll.review.js" />
+    <Compile Include="app\views\payroll.view\payroll.view.js" />
+    <Compile Include="app\views\payroll\payroll.js" />
+    <Compile Include="app\views\signup\signup.js" />
+    <Compile Include="app\views\staff.add2\staff.add2.js" />
+    <Compile Include="app\views\staff.add\staff.add.js" />
+    <Compile Include="app\views\staff.choose\staff.choose.js" />
+    <Compile Include="app\views\staff.edit\staff.edit.js" />
+    <Compile Include="app\views\staff.view\staff.view.js" />
+    <Compile Include="app\views\staff\staff.js" />
+    <Compile Include="server.js" />
+    <Content Include="app\views\agenda\agenda.html" />
+    <Content Include="app\views\appmain\appmain.html" />
+    <Content Include="app\views\login\log-in.html" />
+    <Content Include="app\nav.html" />
+    <Content Include="app\views\onboarding\onboarding.html" />
+    <Content Include="app\views\payment.add\payment.add.html" />
+    <Content Include="app\views\signup\sign-up.html" />
+    <Content Include="app\views\staff.add2\staff.add2.html" />
+    <Content Include="app\views\staff.choose\staff.choose.html" />
+    <Content Include="app\views\company.settings\company.settings.html" />
+    <Content Include="app\index.html" />
+    <Content Include="app\views\payroll.add\payroll.add.html" />
+    <Content Include="app\views\payroll.edit\payroll.edit.html" />
+    <Content Include="app\views\payroll\payroll.html" />
+    <Content Include="app\views\payroll.pay\payroll.pay.html" />
+    <Content Include="app\views\payroll.review\payroll.review.html" />
+    <Content Include="app\views\payroll.view\payroll.view.html" />
+    <Content Include="app\views\staff.add\staff.add.html" />
+    <Content Include="app\views\staff.edit\staff.edit.html" />
+    <Content Include="app\views\staff\staff.html" />
+    <Content Include="app\views\staff.view\staff.view.html" />
+    <Content Include="app\assets\css\app.css" />
+    <Content Include="app\assets\css\app.min.css" />
+    <Content Include="app\assets\css\bootstrap-theme.css" />
+    <Content Include="app\assets\css\bootstrap-theme.css.map" />
+    <Content Include="app\assets\css\bootstrap-theme.min.css" />
+    <Content Include="app\assets\css\bootstrap.css" />
+    <Content Include="app\assets\css\bootstrap.css.map" />
+    <Content Include="app\assets\css\bootstrap.min.css" />
+    <Content Include="app\assets\css\font-awesome.css" />
+    <Content Include="app\assets\css\font-awesome.min.css" />
+    <Content Include="app\assets\css\style.css" />
+    <Content Include="app\assets\css\style.min.css" />
+    <Content Include="app\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="app\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="app\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="app\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="app\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="app\assets\fonts\FontAwesome.otf" />
+    <Content Include="app\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="app\assets\images\132H.jpg" />
+    <Content Include="app\assets\images\caytree-marketplace-logo.png" />
+    <Content Include="app\assets\images\DeathtoStock_Creative Community1.jpg" />
+    <Content Include="app\assets\images\IMG_0443.jpg" />
+    <Content Include="app\assets\images\IMG_0630_rt2.jpg" />
+    <Content Include="app\assets\images\LakeNakuruAug2008_8679.JPG" />
+    <Content Include="app\assets\images\picjumbo.com_HNCK1814.jpg" />
+    <Content Include="app\assets\less\animated.less" />
+    <Content Include="app\assets\less\bordered-pulled.less" />
+    <Content Include="app\assets\less\core.less" />
+    <Content Include="app\assets\less\fixed-width.less" />
+    <Content Include="app\assets\less\font-awesome.less" />
+    <Content Include="app\assets\less\icons.less" />
+    <Content Include="app\assets\less\larger.less" />
+    <Content Include="app\assets\less\list.less" />
+    <Content Include="app\assets\less\mixins.less" />
+    <Content Include="app\assets\less\path.less" />
+    <Content Include="app\assets\less\rotated-flipped.less" />
+    <Content Include="app\assets\less\stacked.less" />
+    <Content Include="app\assets\less\variables.less" />
+    <Content Include="app\assets\scss\app.scss" />
+    <Content Include="app\assets\scss\font-awesome.css" />
+    <Content Include="app\assets\scss\font-awesome.min.css" />
+    <Content Include="app\assets\scss\font-awesome.scss" />
+    <Content Include="app\assets\scss\style.scss" />
+    <Content Include="app\assets\scss\_animated.scss" />
+    <Content Include="app\assets\scss\_bordered-pulled.scss" />
+    <Content Include="app\assets\scss\_core.scss" />
+    <Content Include="app\assets\scss\_fixed-width.scss" />
+    <Content Include="app\assets\scss\_icons.scss" />
+    <Content Include="app\assets\scss\_larger.scss" />
+    <Content Include="app\assets\scss\_list.scss" />
+    <Content Include="app\assets\scss\_mixins.scss" />
+    <Content Include="app\assets\scss\_path.scss" />
+    <Content Include="app\assets\scss\_rotated-flipped.scss" />
+    <Content Include="app\assets\scss\_stacked.scss" />
+    <Content Include="app\assets\scss\_variables.scss" />
+    <Content Include="index.html.bak" />
+    <Content Include="package.json" />
+    <Content Include="public\index.html" />
+    <Content Include="public\log-in.html" />
+    <Content Include="public\onboarding.html" />
+    <Content Include="public\reset.html" />
+    <Content Include="public\sign-up.html" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\assets\" />
+    <Folder Include="app\assets\css\" />
+    <Folder Include="app\assets\custom-js\" />
+    <Folder Include="app\assets\fonts\" />
+    <Folder Include="app\assets\images\" />
+    <Folder Include="app\assets\js\" />
+    <Folder Include="app\assets\less\" />
+    <Folder Include="app\assets\scss\" />
+    <Folder Include="app\views\" />
+    <Folder Include="app\views\agenda\" />
+    <Folder Include="app\views\appmain\" />
+    <Folder Include="app\views\company.settings\" />
+    <Folder Include="app\views\login\" />
+    <Folder Include="app\views\payroll.review\" />
+    <Folder Include="app\views\payroll.view\" />
+    <Folder Include="app\views\signup\" />
+    <Folder Include="app\views\staff.add\" />
+    <Folder Include="app\views\staff.add2\" />
+    <Folder Include="app\views\staff.choose\" />
+    <Folder Include="app\views\staff.edit\" />
+    <Folder Include="app\views\staff\" />
+    <Folder Include="app\views\staff.view\" />
+    <Folder Include="app\views\payroll.pay\" />
+    <Folder Include="app\views\onboarding\" />
+    <Folder Include="app\views\payment.add\" />
+    <Folder Include="app\views\payroll.add\" />
+    <Folder Include="app\views\payroll.edit\" />
+    <Folder Include="app\views\payroll\" />
+    <Folder Include="public\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

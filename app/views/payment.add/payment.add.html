@@ -1,0 +1,66 @@
+﻿<!--<section ng-controller="payrollAddController" class="modal deductions-all" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+             <!--Modal Header
+            <div class="row">
+                <div class="col-md-10">
+                    <h2>Add new payment</h2>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>-->
+<section ng-controller="payrollAddController" class="app-main">
+
+    <section class="app-main-summary app-bg-white">
+        <section class="col-sm-12 padding-lg">
+            
+
+                <div class="row margin-top-lg">
+                    <div class="col-sm-12">
+                        <form class="">
+                            <div class="row margin-bottom-lg">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input ng-model="Name"class="form-control input-lg" type="text" placeholder="Name" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Account</label>
+                                        <input ng-model="Account" class="form-control input-lg" type="number" placeholder="Account" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Amount</label>
+                                        <input ng-model="Amount" class="form-control input-lg" type="number" placeholder="Amount" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Deadline to pay</label>
+                                        <input ng-model="Deadline" class="form-control" type="date" placeholder="Deadline date" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="row text-right margin-top-lg">
+                    <div class="col-md-12 col-sm-12">
+                        <a href="#/payrolladd" type="submit" class="btn" >Cancel</a>
+                        <a href="#/payrolladd" ng-click="updateTable()" type="submit" class="btn btn-success" >Add payment</a>
+                    </div>
+                </div>
+                </section>
+        </section>
+    </section>
+
+                <!--</div>
+                    </div>
+                </section>-->

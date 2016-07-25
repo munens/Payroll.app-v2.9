@@ -1,0 +1,24 @@
+{
+  "name": "payroll",
+  "version": "0.0.0",
+  "description": "Payroll",
+  "main": "server.js",
+  "author": {
+    "name": "Munene",
+    "email": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "moment": "^2.13.0",
+    "mongodb": "^2.1.16",
+    "mongojs": "^2.3.0",
+    "mongoose": "^4.4.12",
+    "multer": "^1.1.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "session": "^0.1.0"
+  }
+}

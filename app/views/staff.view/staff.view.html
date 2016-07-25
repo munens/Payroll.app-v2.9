@@ -1,0 +1,149 @@
+<ng-include src="'nav.html'"></ng-include>   
+ <section ng-controller='staffViewController' class="app-main">
+        <section class="app-main-summary">
+            <div class="col-sm-12">
+                <div class="row padding-top-lg padding-bottom-lg bg-white border-bottom-light padding-right-xl">
+                    <div class="col-sm-1 text-right">
+                        <h2><i class="material-icons">person</i></h2>
+                    </div>
+                    <div class="col-sm-8">
+                        <h2 class="padding-bottom-xs">{{staff.FirstName}} {{staff.LastName}}</h2>
+
+                        
+
+                        <ul class="list-inline">
+                            <li>{{staff.Role}}</li>
+                            <li>Gross Pay: Ksh. {{staff.GrossPay}}</li>
+                            <li>Type: {{staff.StaffType}}</li>
+                            <li>Status: {{staff.StaffStatus}}</li>
+                        </ul>
+
+                        <div class="col-sm-3 text-right">
+                            <a href="#/staff" ng-click="removeStaff(staff._id)" class="btn btn-danger">Remove Staff</a>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-sm-3 text-right">
+                        <a href="#/staffedit/{{staff._id}}" class="btn btn-accent">Edit Staff</a>
+                    </div>
+                </div>
+
+                <div class="row padding-top-lg padding-right-xl">
+                    <div class="col-md-1 text-right">
+                        <h2 class=""><i class="fa fa-money"></i></h2>
+                    </div>
+                    <div class="col-md-11">
+                        <h3 class="">Payments</h3>
+
+                        <table class="table app-table-hd table-responsive margin-top-lg">
+                            <thead>
+                            <tr>
+                                <th>Date Paid</th>
+                                <th class="text-right">Gross</th>
+                                <th class="text-right">Taxes</th>
+                                <th class="text-right">Deductions</th>
+                                <th class="text-right">Reimbursments</th>
+                                <th class="text-right">Net Pay</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><span>21 September 2015</span></td>
+                                <td class="text-right"><span>123,456</span></td>
+                                <td class="text-right"><span>3,456</span></td>
+                                <td class="text-right"><span>1,000</span></td>
+                                <td class="text-right"><span>0</span></td>
+                                <td class="text-right"><span>126,456</span></td>
+                                <td class="text-right"><a href="#"><i class="fa fa-caret-down"></i></a></td>
+                            </tr>
+
+                            <tr class="">
+                                <td><span><h3>Total</h3></span></td>
+                                <td class="text-right"><span>123,456</span></td>
+                                <td class="text-right"><span>3,456</span></td>
+                                <td class="text-right"><span>1,000</span></td>
+                                <td class="text-right"><span>0</span></td>
+                                <td class="text-right"><span>126,456</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- TODO: Template: Activity Bar -->
+    <section class="app-side app-border-left-light">
+
+        <div class="header padding-md">
+            <h3 class="text-center padding-bottom-lg padding-top-md">Staff Details</h3>
+            <dl class="dl-horizontal">
+                <dt>Phone Number</dt>
+                <dd>{{staff.Phoneno}}</dd>
+
+                <dt>Work Email</dt>
+                <dd>{{staff.Email}}</dd>
+
+                <dt>ID Number</dt>
+                <dd>{{staff.IDno}}</dd>
+
+                <dt>Date of Birth</dt>
+                <dd>{{staff.DOB}}</dd>
+
+                <dt>Address</dt>
+                <dd>{{staff.Address}}</dd>
+            </dl>
+            <dl class="dl-horizontal margin-top-lg">
+                <dt>
+                <h4>Company Details</h4></dt>
+                <dd>
+                    <div class="border-top margin-top-sm full-width"></div>
+                </dd>
+
+                <dt>Role</dt>
+                <dd>{{staff.Role}}</dd>
+
+                <dt>Staff Type</dt>
+                <dd>{{staff.StaffType}}</dd>
+
+                <dt>Status</dt>
+                <dd>{{staff.StaffStatus}}</dd>
+
+                <dt>Start Date</dt>
+                <dd>{{staff.StartDate}}</dd>
+
+            </dl>
+            <dl class="dl-horizontal margin-top-lg">
+                <dt>
+                <h4>Tax Details</h4></dt>
+                <dd>
+                    <div class="border-top margin-top-sm full-width"></div>
+                </dd>
+
+                <dt>KRA PIN Number</dt>
+                <dd>{{staff.KRAPinno}}</dd>
+
+                <dt>NHIF</dt>
+                <dd>{{staff.NHIFno}}</dd>
+
+                <dt>NSSF</dt>
+                <dd>{{staff.NSSFno}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                <h4>Payment Details</h4></dt>
+                <dd>
+                    <div class="border-top margin-top-sm full-width"></div>
+                </dd>
+
+                <dt>Bank Details</dt>
+                <dd>{{staff.BankName}}</dd>
+                <dd>{{staff.BankBranch}}</dd>
+                <dd>{{staff.Accountno}}</dd>
+            </dl>
+        </div>
+
+    </section>
+

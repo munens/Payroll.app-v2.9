@@ -1,0 +1,111 @@
+<section ng-controller="onBoardingController">
+
+
+
+    <div class="container-fluid">
+
+        <section class="row header margin-bottom-xl bg-white border-bottom">
+            <div class="col-md-5 col-md-offset-1 padding-top-md">
+                <a href="index.html" class="h3 no-pad">Caytree</a>
+            </div>
+            <div class="col-md-5 text-right padding-top-sm">
+                <ul class="list-unstyled list-inline va-middle">
+                    <li><a href="#/login" class="btn btn-hd btn-primary strong">Log in</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="row main margin-bottom-xl">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <section class="row margin-bottom-lg">
+                    <div class="col-md-1 text-right padding-top-sm text-muted">
+                        <a href="sign-up.html" class="h3"><i class="fa fa-arrow-left"></i></a>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="h3 text-center no-pad step">2</div>
+                    </div>
+                    <div class="col-md-5">
+                        <h2 class="margin-top-sm">Add your company</h2>
+                    </div>
+                </section>
+
+                <section class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+
+                        <section class="margin-bottom-lg padding-bottom-md border-bottom-light clearfix" id="company-details">
+                            <h3 class="pointer padding-bottom-md" role="heading" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">Company Details</h3>
+                            <div class="collapse in" id="collapse1">
+                                <input ng-model="Account.Company.Name" class="col-md-7 input capitalize" placeholder="company name">
+
+                            </div>
+                        </section>
+
+
+                        <section class="margin-bottom-lg padding-bottom-md border-bottom-light clearfix" id="company-locations">
+                            <h3 class="pointer padding-bottom-md" role="heading" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Company locations</h3>
+                            <div class="collapse" id="collapse2">
+                                <input ng-model="Account.Company.Branch" class="col-md-8 input" placeholder="branch name" />
+
+                                <textarea ng-model="Account.Company.Location" class="col-md-6 input" rows="4" placeholder="physical location"></textarea>
+                                <input ng-model="Account.Company.PObox" class="col-md-5 col-md-offset-1 input" type="text" placeholder="p. o. box" />
+                                <input ng-model="Account.Company.County" class="col-md-5 col-md-offset-1 input margin-top-md" type="text" placeholder="county" />
+                                <div class="col-md-12">
+                                    <button class="row btn btn-hd margin-bottom-lg">Add another location</button>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <section class="margin-bottom-lg padding-bottom-md border-bottom-light clearfix" id="payment-accounts">
+                            <h3 class="pointer padding-bottom-md" role="heading" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">Payment accounts and authorization</h3>
+                            <div class="collapse" id="collapse5">
+                                <div class="input-group-hd">
+                                    <input ng-model="Account.Company.Bank" class="col-md-3 input capitalize" type="text" placeholder="bank">
+                                    <input ng-model="Account.Company.BankBranch" class="col-md-3 input capitalize" type="text" placeholder="branch">
+                                    <input ng-model="Account.Company.Accountno" class="col-md-5 input" type="text" placeholder="account number">
+                                </div>
+                                <input ng-model="Account.Company.Email" class="col-md-9 input" type="text" placeholder="authorizer email" />
+                            </div>
+                        </section>
+
+
+                        <section class="margin-bottom-lg padding-bottom-md border-bottom-light clearfix" id="tax-details">
+                            <h3 class="pointer padding-bottom-md" role="heading" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">KRA, NSSF and NHIF details</h3>
+                            <div class="collapse" id="collapse3">
+                                <input ng-model="Account.Company.KRAPinno" class="col-md-8 input" placeholder="KRA Pin number">
+                                <input ng-model="Account.Company.NHIFno" class="col-md-6 input" placeholder="NHIF number">
+                                <input ng-model="Account.Company.NSSFno" class="col-md-7 input" placeholder="NSSF number">
+                            </div>
+                        </section>
+
+
+                        <div class="clearfix">
+                            <a href="#/login" ng-click="update()" class="btn btn-hd btn-md btn-accent pull-right strong">Finish registration</a>
+                            <button class="btn btn-hd pull-left margin-top-sm strong">skip</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+
+
+
+        <!-- Footer -->
+        <section class="row padding-top-md padding-bottom-sm border-top-light border-bottom-light bg-white" id="footer">
+            <div class="container">
+                <ul class="list-inline">
+                    <li>&copy; 2015 | <a href="#" class="strong">Caytree Partners</a></li>
+                    <li>All rights reserved.</li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+        </section>
+
+
+
+    </div>
+
+
+</section>

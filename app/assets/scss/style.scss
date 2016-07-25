@@ -1,0 +1,639 @@
+/* Marketplace */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+* {
+    font-family:  'Open Sans', sans-serif;
+}
+a, a:hover, a:visited, a:focus{
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+}
+link{
+    display: inline !important;
+}
+
+.semi-bold{
+    font-weight: 600;
+}
+
+/* Colors */
+$brand-green: #00783d;
+$brand-blue: #0078a3;
+$brand-green-dark: darken($brand-green, 10%);
+$brand-grey: darken(white, 30%);
+$brand-grey-light: darken(white, 20);
+$brand-grey-lighter: darken(white, 10%);
+$brand-grey-lightest: darken(white, 6%);
+$brand-grey-dark: darken(white, 60%);
+$brand-red: red;
+
+/* Height */
+@mixin height($divider){
+    $max-height: 720px;
+    height: $max-height/$divider;
+}
+.height{
+    &-xlg {
+        @include height(1);
+    }
+    &-lg {
+        @include height(2);
+    }
+    &-md {
+        @include height(3);
+    }
+    &-sm {
+        @include height(4);
+    }
+    &-xs {
+        @include height(5);
+    }
+    &-xx {
+        @include height(10);
+    }
+    &-full {
+        height: 100%;
+        position: relative;
+    }
+}
+
+/* TEMP: Spacing */
+@mixin space($property, $size){
+    $default-size: 15px;
+    @if $size == md {
+        $property: $default-size;
+    } @else if $size == sm {
+        $property: $default-size/2;
+    } @else if $size == xs {
+        $property: $default-size/4;
+    }
+}
+
+
+$spacing-md: 15px;
+$spacing-sm: $spacing-md/2;
+$spacing-xs: $spacing-sm/2;
+$spacing-lg: $spacing-md*2;
+$spacing-xl: $spacing-lg*2;
+
+/* Pad */
+
+@mixin space($property, $loc){
+    @if $loc {
+        &-#{$loc}{
+            &-xlg{
+                #{$property}-#{$loc}: $spacing-xl;
+            }
+            &-lg{
+                #{$property}-#{$loc}: $spacing-lg;
+            }
+            &-md{
+                #{$property}-#{$loc}: $spacing-md;
+            }
+            &-sm{
+                #{$property}-#{$loc}: $spacing-sm;
+            }
+            &-xs{
+                #{$property}-#{$loc}: $spacing-xs;
+            }
+        }
+    } @else {
+        &-xs{
+            #{$property}: $spacing-xs;
+        }
+        &-sm{
+            #{$property}: $spacing-sm;
+        }
+        &-md{
+            #{$property}: $spacing-md;
+        }
+        &-lg{
+            #{$property}: $spacing-lg;
+        }
+        &-xlg{
+            #{$property}: $spacing-xl;
+        }
+    }
+}
+.padding {
+    $property: padding;
+
+    &-xs{
+        #{$property}: $spacing-xs;
+    }
+    &-sm{
+        #{$property}: $spacing-sm;
+    }
+    &-md{
+        #{$property}: $spacing-md;
+    }
+    &-lg{
+        #{$property}: $spacing-lg;
+    }
+    &-xl{
+        #{$property}: $spacing-xl;
+    }
+
+    &-left{
+        &-xl{
+            #{$property}-left: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-right: $spacing-lg;
+        }
+        &-md{
+            #{$property}-right: $spacing-md;
+        }
+        &-sm{
+            #{$property}-right: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-right: $spacing-xs;
+        }
+    }
+
+    &-right{
+        &-xl{
+            #{$property}-right: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-right: $spacing-lg;
+        }
+        &-md{
+            #{$property}-right: $spacing-md;
+        }
+        &-sm{
+            #{$property}-right: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-right: $spacing-xs;
+        }
+    }
+
+    &-top{
+        &-xl{
+            #{$property}-top: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-top: $spacing-lg;
+        }
+        &-md{
+            #{$property}-top: $spacing-md;
+        }
+        &-sm{
+            #{$property}-top: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-top: $spacing-xs;
+        }
+    }
+
+    &-bottom{
+        &-xl{
+            #{$property}-bottom: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-bottom: $spacing-lg;
+        }
+        &-md{
+            #{$property}-bottom: $spacing-md;
+        }
+        &-sm{
+            #{$property}-bottom: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-bottom: $spacing-xs;
+        }
+    }
+}
+.margin {
+    $property: margin;
+
+    &-xs{
+        #{$property}: $spacing-xs;
+    }
+    &-sm{
+        #{$property}: $spacing-sm;
+    }
+    &-md{
+        #{$property}: $spacing-md;
+    }
+    &-lg{
+        #{$property}: $spacing-lg;
+    }
+    &-xl{
+        #{$property}: $spacing-xl;
+    }
+
+    &-left{
+        &-xl{
+            #{$property}-left: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-right: $spacing-lg;
+        }
+        &-md{
+            #{$property}-right: $spacing-md;
+        }
+        &-sm{
+            #{$property}-right: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-right: $spacing-xs;
+        }
+    }
+
+    &-right{
+        &-xl{
+            #{$property}-right: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-right: $spacing-lg;
+        }
+        &-md{
+            #{$property}-right: $spacing-md;
+        }
+        &-sm{
+            #{$property}-right: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-right: $spacing-xs;
+        }
+    }
+
+    &-top{
+        &-xl{
+            #{$property}-top: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-top: $spacing-lg;
+        }
+        &-md{
+            #{$property}-top: $spacing-md;
+        }
+        &-sm{
+            #{$property}-top: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-top: $spacing-xs;
+        }
+    }
+
+    &-bottom{
+        &-xl{
+            #{$property}-bottom: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-bottom: $spacing-lg;
+        }
+        &-md{
+            #{$property}-bottom: $spacing-md;
+        }
+        &-sm{
+            #{$property}-bottom: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-bottom: $spacing-xs;
+        }
+    }
+}
+
+/* Misc */
+/* Modified Bootstrap Modal elements */
+.modal{
+    padding-top: 4%;
+    &-backdrop{
+        background-color: #fff;
+        &.in{
+            opacity: .95;
+        }
+    }
+    &-content {
+        position: relative;
+        background-color: transparent;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+.no-pad{
+    padding: 0;
+    margin: 0;
+}
+.va-middle{
+    vertical-align: middle;
+}
+.strong, .bold{
+    font-weight: bold;
+}
+.pointer{
+    cursor: pointer;
+}
+.full-width{
+    width: 100%;
+}
+.material-icons{
+    font-size: inherit;
+    line-height: 1;
+    display: inline-block;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+.step{
+    padding: 10px 14px;
+    background: $brand-blue;
+    color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    float: right;
+    display: inline;
+}
+
+.underline{
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+}
+
+
+/* Colors */
+.bg-white{
+    background-color: #fff;
+}
+.bg-none, tr.bg-none{
+    background: none !important;
+    border: none !important;
+}
+.text-white{
+    color: #fff;
+    &:hover, &:focus {
+        color: #fff !important;
+    }
+}
+
+
+/* Custom Buttons styles */
+.btn{
+    &-hd{
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    &-md{
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+    &-accent{
+        background: orange;
+        color: #fff;
+        &:hover, &:focus, &:visited{
+            background: lighten(orange, 10%);
+            color: #fff;
+        }
+    }
+    &-xl{
+        padding: 15px 21px;
+        font-size: 30px;
+        line-height: 1.3333333;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+}
+
+/* Custom Input */
+$input-empty: lighten(#000, 80%);
+$input-hovered: lighten(#000, 60%);
+$input-focused: lighten(#000, 30%);
+$input-filled: lighten(#000, 30%);
+
+.input{
+    outline: 0;
+    display: inline-block;
+    margin-bottom: $spacing-md;
+    border: 1px solid darken(#fff, 30%);
+    background: #fff;
+    padding: $spacing-sm $spacing-md;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: inherit;
+    color: $input-filled;
+
+    // Vendor prefixed placeholder color edits (https://css-tricks.com/snippets/css/style-placeholder-text/)
+    &::-webkit-input-placeholder {
+        color: $input-empty;
+    }
+    &:-moz-placeholder {
+        color: $input-empty;
+    }
+    &::-moz-placeholder {
+        color: $input-empty;
+    }
+    &:-ms-input-placeholder {
+        color: $input-empty;
+    }
+
+    &:active, &:focus, &:visited, &:hover{
+        color: $input-filled;
+    }
+    &.filled{
+        background: lighten(green, 90%);
+    }
+
+    &-unstyled {
+        outline: 0;
+        border: none;
+        font-size: inherit;
+        padding: $spacing-sm;
+        background: transparent;
+    }
+
+    &-group-addon {
+        border: none;
+        background: inherit;
+    }
+    &-group-hd{
+        border: none;
+        outline: 0;
+        display: inline-block;
+        margin-bottom: $spacing-md;
+        width: 100%;
+
+        .input {
+            border: none;
+            outline: none;
+            margin: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            background: #fff;
+            padding: 10px 15px;
+            font-size: inherit;
+            color: $input-filled;
+
+
+
+
+            // Vendor prefixed placeholder color edits (https://css-tricks.com/snippets/css/style-placeholder-text/)
+            &::-webkit-input-placeholder {
+                color: $input-empty;
+            }
+            &:-moz-placeholder {
+                color: $input-empty;
+            }
+            &::-moz-placeholder {
+                color: $input-empty;
+            }
+            &:-ms-input-placeholder {
+                color: $input-empty;
+            }
+            &.filled{
+                background: lighten(green, 90%);
+            }
+
+            border-top: #{darken(#fff, 30%)} solid 1px;
+            border-bottom: #{darken(#fff, 30%)} solid 1px;
+            border-left: #{darken(#fff, 30%)} solid 1px;
+
+            &:first-child{
+                border-left: #{darken(#fff, 30%)} solid 1px;
+                border-bottom: #{darken(#fff, 30%)} solid 1px;
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+            &:last-child {
+                border-left: #{darken(#fff, 30%)} solid 1px;
+                border-right: #{darken(#fff, 30%)} solid 1px;
+                border-bottom: #{darken(#fff, 30%)} solid 1px;
+                border-bottom-right-radius: 10px !important;
+                border-top-right-radius: 10px;
+            }
+
+            &:active, &:focus, &:visited, &:hover{
+                color: $input-filled;
+            }
+        }
+    }
+}
+
+.select-hd {
+    //-webkit-appearance: none;
+    border: 1px solid darken(#fff, 30%);
+    background: #fff;
+    color: $input-filled;
+    font: inherit;
+    outline: 0;
+    display: inline-block;
+    margin-bottom: $spacing-md;
+    padding: 10px 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* Borders */
+.border {
+    $property: border;
+    #{$property}: $brand-grey-light solid 1px;
+    &-top{
+        #{$property}-top: $brand-grey solid 1px;
+        &-light {
+            #{$property}-top: $brand-grey-light solid 1px;
+        }
+    }
+    &-bottom{
+        #{$property}-bottom: $brand-grey solid 1px;
+        &-light{
+            #{$property}-bottom: $brand-grey-light solid 1px;
+        }
+    }
+    &-left{
+        #{$property}-left: $brand-grey solid 1px;
+        &-light{
+            #{$property}-left: $brand-grey-light solid 1px;
+        }
+    }
+    &-right{
+        #{$property}-right: $brand-grey solid 1px;
+        &-light{
+            #{$property}-right: $brand-grey-light solid 1px;
+        }
+    }
+
+    &-light {
+        #{$property}: $brand-grey-light solid 1px;
+    }
+    &-radius {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    &:hover{
+        border-color: $brand-grey;
+    }
+    &-2px {
+        #{$property}-width: 2px;
+    }
+    &-3px {
+        #{$property}-width: 3px;
+    }
+
+    &-white {
+        border-color: #fff;
+    }
+}
+
+
+/* Styles */
+body{
+    background: darken(#fff, 5%);
+}
+
+.header{
+    .jumbo-image{
+        background: lighten(#000, 90%) url('../images/DeathtoStock_Creative%20Community1.jpg') 20% 70% no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

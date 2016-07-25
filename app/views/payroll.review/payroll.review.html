@@ -1,0 +1,739 @@
+<ng-include src="'nav.html'"></ng-include>    
+<section ng-controller="payrollReviewController" class="app-main">
+
+        <!-- TODO: Template: Listing
+        <section class="app-highlight border-right-light hidden">
+
+
+            <section class="col-md-12 app-listing payroll">
+                <div class="row head">
+                    <a href="#/payroll" class="padding-md pull-left text-white">Pay Cycles</a>
+                    <a href="#/payrolladd" class="add pull-right strong padding-md text-white"><i
+                            class="fa fa-plus"></i></a>
+                </div>
+
+                <div class="row content-list">
+                    <div class="input-group bg-info border-bottom-light">
+                        <a href="#" class="input-group-addon"><i class="fa fa-search"></i></a>
+                        <input class="input-unstyled full-width" type="text"/>
+                    </div>
+
+                    <h3 class="section">In Progress <span class="label app-bg-blue pull-right">3</span></h3>
+
+                    <ul class="list-unstyled no-pad">
+                        <li class="">
+                            <a href="#/payrollview">
+                                <h4 class="">October 2015 Payroll</h4>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="#/payrollview">
+                                <h4 class="">September 2015 Payroll</h4>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#/payrollview">
+                                <h4 class="">August 2015 Payroll</h4>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="margin-top-lg row"></div>
+
+                    <h3 class="section">Completed</h3>
+                    <ul class="list-unstyled no-pad">
+                        <li class=""><a href="#/payrollview" class="text-muted">July 2015 Payroll</a></li>
+                        <li class=""><a href="#/payrollview" class="text-muted">June 2015 Payroll</a></li>
+                        <li class=""><a href="#/payrollview" class="text-muted">May 2015 Payroll</a></li>
+                        <li class=""><a href="#/payrollview" class="text-muted">April 2015 Payroll</a></li>
+                        <li class=""><a href="#/payrollview" class="text-muted">March 2015 Payroll</a></li>
+                        <li class=""><a href="#/payrollview" class="text-muted">February 2015 Payroll</a></li>
+                    </ul>
+                </div>
+            </section>
+
+
+        </section>  -->
+
+        <section class="app-main-summary app-bg-white">
+
+            <!-- TODO: Template: Notification Bar -->
+            <section class="app-notification-bar border-bottom-light">
+                <ul class="list-unstyled no-pad message">
+                    <li class="bg-success">Notification bar. Hides when there is no message.</li>
+                </ul>
+            </section>
+
+            <!-- TODO: Template: Review -->
+            <section class="col-sm-12">
+                <div class="row padding-top-lg padding-bottom-lg bg-white border-bottom-light padding-right-xl">
+                    <div class="col-sm-1 text-right">
+                        <h3 class="padding-top-xs"><span class="label label-default">2/3</span></h3>
+                        <h4 class="margin-top-md"><span class="label strong label-default" title="Status">Review</span>
+                        </h4>
+                    </div>
+                    <div class="col-sm-5">
+                        <h1 class="padding-bottom-xs">Review</h1>
+
+                        <h3 class="padding-bottom-md">{{payroll.Name}}</h3>
+                        <button class="btn btn-default btn-sm">{{payroll.Period_from}}</button> &mdash;
+                        <button class="btn btn-sm btn-default">{{payroll.Period_to}}</button>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <a href="#/payrolledit" class="btn btn-default btn-lg">Edit Pay Cycle</a>
+                    </div>
+                </div>
+
+                <div class="row margin-bottom-xl padding-top-lg padding-bottom-lg app-bg-grey-light border-light hidden-lg padding-right-xl">
+                    <div class="col-sm-1 text-right">
+                        <h2 class="padding-bottom-sm"><i class="material-icons">label</i></h2>
+                    </div>
+                    <div class="col-sm-11">
+                        <h3 class="padding-bottom-lg">Pay cycle summary</h3>
+                        <table class="table table-responsive app-table-hd">
+                            <tbody>
+                            <tr class="bg-none">
+                                <td><h4>Staff Payments</h4></td>
+                                <td class="text-right"><h4>720,000</h4></td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h5>Employees</h5></td>
+                                <td class="text-right"><h5>200,000</h5></td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h5>Contractors</h5></td>
+                                <td class="text-right"><h5>200,000</h5></td>
+                            </tr>
+
+
+                            <tr class="bg-none">
+                                <td colspan="2" class="padding-lg">&nbsp;</td>
+                            </tr>
+
+                            <tr class="bg-none">
+                                <td><h4>Statutory Taxes</h4></td>
+                                <td class="text-right"><h4>200,000</h4></td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h5>PAYE</h5></td>
+                                <td class="text-right"><h5>200,000</h5></td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h5>NHIF</h5></td>
+                                <td class="text-right"><h5>200,000</h5></td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h5>NSSF</h5></td>
+                                <td class="text-right"><h5>200,000</h5></td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h5>Withholding tax</h5></td>
+                                <td class="text-right"><h5>200,000</h5></td>
+                            </tr>
+
+                            <tr class="bg-none">
+                                <td colspan="2" class="padding-lg">&nbsp;</td>
+                            </tr>
+
+
+                            <tr class="bg-none">
+                                <td><h4>Other payments</h4></td>
+                                <td class="text-right"><h4>80,000</h4></td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td colspan="2" class="padding-lg">&nbsp;</td>
+                            </tr>
+                            <tr class="bg-none">
+                                <td><h2 class="strong">Total</h2></td>
+                                <td class="text-right"><h2 class="strong">1,000,000</h2></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row margin-bottom-xl margin-top-xl padding-bottom-lg padding-right-xl">
+                    <div class="col-sm-1 col-md-1 text-right">
+                        <h2 class="padding-bottom-sm"><i class="material-icons">person</i></h2>
+                    </div>
+                    <div class="col-sm-11">
+                        <ul class="list-inline">
+                            <li><h3 class="">{{numberOfStaff}} employees</h3></li>
+								<li class="pull-right"><a href="#" class="btn app-bg-accent" data-toggle="modal"
+                                                          data-target=".staff-all">Select employees</a></li>
+                                <li class="pull-right"><a href="#/staffadd" class="btn app-bg-green" data-toggle="modal"
+                                                          data-target=".staff-add">Add new staff</a></li>				
+                        </ul>
+
+
+                        <table class="table app-table-hd table-responsive margin-top-md">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Gross</th>
+                                <th class="text-right">Bonus</th>
+                                <th class="text-right">PAYE</th>
+                                <!--<th class="text-right">PAYE</th>-->
+                                <th class="text-right">NHIF</th>
+                                <th class="text-right">NSSF</th>
+                                <th class="text-right">Net</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr ng-repeat="s in itemsInTable">
+                                <!--<td><input ng-model="inpaycycle" ng-change="staffChecked(s)" class="" type="checkbox" name="staffcheck" /></td>-->
+                                <td class="text-nowrap"><a href="#">{{s.FirstName}} {{s.LastName}}</a></td>
+                                <td class="text-right text-success"><span>{{s.GrossPay}}</span></td>
+                                <td class="text-right text-success"><input ng-change="updateFields(s)" ng-model="s.Bonus" type="number" class="" /></td>
+                                <td class="text-right"><span>{{s.PAYE}}</span></td>
+                                <td class="text-right"><span>{{s.NHIF}}</span></td>
+                                <td class="text-right"><span>{{s.NSSF}}</span></td>
+                                <td class="text-right"><span>{{s.NetPay}}</span></td>
+                                <td class="text-center"><a href=""><i class="fa fa-caret-down"></i></a></td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="h3 no-pad strong">Total</span></td>
+                                <td class="text-right text-success strong"><span >{{totalGP()}}</span></td>
+                                <td class="text-right strong"><span>{{totalBonus()}}</span></td>
+                                <td class="text-right strong"><span>{{totalPAYE()}}</span></td>
+                                <td class="text-right strong"><span>{{totalNHIF()}}</span></td>
+                                <td class="text-right strong"><span>{{totalNSSF()}}</span></td>
+                                <td class="text-right strong"><span>{{totalNetPay()}}</span></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="row margin-bottom-lg padding-bottom-lg padding-right-xl">
+                    <div class="col-sm-1 col-md-1 text-right">
+                        <h2 class="padding-bottom-sm"><i class="material-icons">business</i> </h2>
+                    </div>
+                    <div class="col-sm-11 col-md-5">
+                        <h3 class="">Statutory Taxes</h3>
+
+                        <table class="table app-table-hd table-responsive margin-top-md">
+
+                            <tbody>
+                            <tr>
+                                <td class="text-nowrap"><span>PAYE</span></td>
+                                <td class="text-nowrap"><span><input ng-model="due.PAYEdue" type="text" class="" /></span></td>
+                                <td class="text-right text-danger"><span>{{totalPAYE()}}</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap"><span>NHIF</span></td>
+                                <td class="text-nowrap"><span><input ng-model="due.NHIFdue" type="text" class="" /></span></td>
+                                <td class="text-right text-danger"><span>{{totalNHIF()}}</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap"><span>NSSF</span></td>
+                                <td class="text-nowrap"><span><input ng-model="due.NSSFdue" type="text" class="" /></span></td>
+                                <td class="text-right text-danger"><span>{{totalNSSF()}}</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap"><span>Withholding</span></td>
+                                <td class="text-nowrap"><span>?</span></td>
+                                <td class="text-right text-danger"><span>?</span></td>
+                            </tr>
+
+                            <tr class="">
+                                <td colspan="3" class="text-right text-danger"><span class="h2 no-pad">Total: {{totalTax()}}</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="col-sm-11 col-sm-offset-1 col-md-5">
+                        <h3 class="">Other Payments</h3>
+
+                        <table class="table app-table-hd table-responsive margin-top-md">
+
+
+                                <thead>
+                                    <tr>
+                                        <th>Payment Name</th>
+                                        <th>Account</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Deadline</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr ng-repeat="p in pay">
+                                        <td><span><input  ng-model="p.Name" type="text" class="" /></span></td>
+                                        <td><span><input ng-model="p.Account" type="number" class="" /></span></td>
+                                        <td class="text-right"><span><input ng-model="p.Amount" type="number" class="" /></span></td>
+                                        <td><span><input ng-model="p.Deadline" type="text" class="" /></span></td>
+                                        
+                                        <!--<td><button ng-click="removeItem($index)" class="btn btn-danger">-</button></td>-->
+                                    </tr>
+                                    <tr>
+                                        <td><span>Total: {{TotalPayment}}</span></td>
+                                    </tr>
+                                </tbody>
+                                <!--<tbody>
+                                <tr>
+                                    <td class="text-nowrap"><span>{{p.Payment.Name}}</span></td>
+                                    <td class="text-right"><input ng-model="p.Payment.Name" required type="number" class="text-danger" ng-model-options="{updateOn:'blur'}" /></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-nowrap"><span>{{p.Payment.Name.}}</span></td>
+                                    <td class="text-right"><input ng-model="p.Payment.Electricity"  required type="number" class="text-danger" ng-model-options="{updateOn:'blur'}" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-nowrap"><span>Office Supplies</span></td>
+                                    <td class="text-right"><input ng-model="p.Payment.OfficeSupplies" required type="number" class="text-danger" ng-model-options="{updateOn:'blur'}" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-nowrap"><span>Internet</span></td>
+                                    <td class="text-right"><input ng-model="p.Payment.Internet" required type="number" class="text-danger" ng-model-options="{updateOn:'blur'}" /></td>
+                                </tr>
+
+                                <tr class="">
+                                    <td colspan="3" class="text-right text-danger"><span class="h2 no-pad">{{p.Payment.Rent+p.Payment.WaterElectricity+p.Payment.OfficeSupplies+p.Payment.Internet}}</span></td>
+                                </tr>
+                                </tbody>-->
+                            </table>
+
+
+
+                        <!--<table class="table app-table-hd table-responsive margin-top-md">
+
+                            <tbody>
+                            <tr>
+                                <td class="text-nowrap"><span>Rent</span></td>
+                                <td class="text-right"><input ng-model="payroll.Payment.Rent" type="text" class="text-danger"/></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-nowrap"><span>Water & Electricity</span></td>
+                                <td class="text-right"><input ng-model="payroll.Payment.WaterElectricity" type="text" class="text-danger" /></td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap"><span>Office Supplies</span></td>
+                                <td class="text-right"><input ng-model="payroll.Payment.OfficeSupplies" type="text" class="text-danger" /></td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap"><span>Internet</span></td>
+                                <td class="text-right"><input ng-model="payroll.Payment.Internet" type="text" class="text-danger"/></td>
+                            </tr>
+
+                            <tr class="">
+                                <td colspan="3" class="text-right text-danger"><span class="h2 no-pad">{{TotalPayment}}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>-->
+                       <!----Hiding this until ready for implementation <a href="#" class="btn app-bg-green pull-right" data-toggle="modal"
+                           data-target=".deductions-all">Add payment</a> -->
+
+                    </div>
+                </div>
+
+                <div class="row margin-bottom-xl padding-bottom-lg padding-right-xl">
+                    <div class="col-sm-12 text-right">
+                        <a href="#/payrolledit" class="btn app-bg-green btn-lg margin-right-lg strong">Save</a>
+                        <a href="#/payrollpay" ng-click="update()" class="btn btn-primary btn-lg">Approve and Pay</a>
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+
+    </section>
+
+    <!-- TODO: Template: Summary Bar -->
+    <section class="app-side app-border-left-light">
+
+        <div class="header padding-md padding-top-lg">
+            <div class="col-sm-12">
+                <h3 class="padding-bottom-lg">Pay cycle summary</h3>
+                <table class="table table-responsive app-table-hd">
+                    <tbody>
+                    <tr class="bg-none">
+                        <td><h4>Staff Payments</h4></td>
+                        <td class="text-right"><h4>720,000</h4></td>
+                    </tr>
+                    <tr class="bg-none">
+                        <td><h5>Employees</h5></td>
+                        <td class="text-right"><h5>200,000</h5></td>
+                    </tr>
+                    <tr class="bg-none">
+                        <td><h5>Contractors</h5></td>
+                        <td class="text-right"><h5>200,000</h5></td>
+                    </tr>
+
+
+                    <tr class="bg-none">
+                        <td colspan="2" class="padding-lg">&nbsp;</td>
+                    </tr>
+
+                    <tr class="bg-none">
+                        <td><h4>Statutory Taxes</h4></td>
+                        <td class="text-right"><h4>200,000</h4></td>
+                    </tr>
+                    <tr class="bg-none">
+                        <td><h5>PAYE</h5></td>
+                        <td class="text-right"><h5>200,000</h5></td>
+                    </tr>
+                    <tr class="bg-none">
+                        <td><h5>NHIF</h5></td>
+                        <td class="text-right"><h5>200,000</h5></td>
+                    </tr>
+                    <tr class="bg-none">
+                        <td><h5>NSSF</h5></td>
+                        <td class="text-right"><h5>200,000</h5></td>
+                    </tr>
+                    <tr class="bg-none">
+                        <td><h5>Withholding</h5></td>
+                        <td class="text-right"><h5>200,000</h5></td>
+                    </tr>
+
+                    <tr class="bg-none">
+                        <td colspan="2" class="padding-lg">&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="bg-none">
+                        <td><h4>Other payments</h4></td>
+                        <td class="text-right"><h4>80,000</h4></td>
+                    </tr>
+
+                    <tr class="bg-none">
+                        <td colspan="2" class="padding-lg">&nbsp;</td>
+                    </tr>
+                    <tr class="bg-none">
+                        <td><h3 class="">Total Payroll</h3></td>
+                        <td class="text-right"><h3>1,000,000</h3></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+
+  <!-- TODO: Modal for Selecting Employees -->
+    <section class="modal staff-all" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h2>Select Employees</h2>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                </div>
+
+                <div class="row margin-top-sm">
+                    <div class="col-md-12">
+                        <a href="#" class="">Select all</a>
+                        <table class="table table-responsive table-hover margin-top-md">
+                            <tr>
+                                <th><input class="" type="checkbox" /></th>
+                                <th># Name</th>
+                                <th class="">Email</th>
+                                <th class="">Phone</th>
+                                <th class="">Type</th>
+                                <th class="text-right">Gross</th>
+                            </tr>
+
+                            <tbody>
+                            <tr>
+                                <td><input class="" type="checkbox" /></td>
+                                <td class="text-nowrap">
+                                    <span>Gerald Joseph</span>
+                                </td>
+                                <td class="text-nowrap"><span>g.joseph@example.com</span></td>
+                                <td class=""><span>072817236</span></td>
+                                <td class=""><span>Salaried</span></td>
+                                <td class="text-right"><span>280,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><input class="" type="checkbox" /></td>
+                                <td class="text-nowrap"><span>Gerald Joseph</span></td>
+                                <td class="text-nowrap"><span>g.joseph@example.com</span></td>
+                                <td class=""><span>072817236</span></td>
+                                <td class=""><span>Contractor</span></td>
+                                <td class="text-right"><span>280,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><input class="" type="checkbox" /></td>
+                                <td class="text-nowrap"><span>Gerald Joseph</span></td>
+                                <td class="text-nowrap"><span>g.joseph@example.com</span></td>
+                                <td class=""><span>072817236</span></td>
+                                <td class=""><span>Salaried</span></td>
+                                <td class="text-right"><span>280,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><input class="" type="checkbox" /></td>
+                                <td class="text-nowrap"><span>Gerald Joseph</span></td>
+                                <td class="text-nowrap"><span>g.joseph@example.com</span></td>
+                                <td class=""><span>072817236</span></td>
+                                <td class=""><span>Salaried</span></td>
+                                <td class="text-right"><span>270,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><input class="" type="checkbox" /></td>
+                                <td class="text-nowrap"><span>Gerald Joseph</span></td>
+                                <td class="text-nowrap"><span>g.joseph@example.com</span></td>
+                                <td class=""><span>072817236</span></td>
+                                <td class=""><span>Contractor</span></td>
+                                <td class="text-right"><span>280,000</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="row text-right">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn app-bg-blue" data-dismiss="modal">Add selected staff to this
+                            payroll
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TODO: Modal for Adding Employees -->
+    <section class="modal staff-add" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h2>Add new staff</h2>
+                        <h5>Fill in all the details</h5>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                </div>
+
+                <div class="row margin-top-xl">
+                    <div class="col-sm-12">
+                        <form class="">
+
+                            <div class="row margin-bottom-lg">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input class="form-control input-lg" type="email" placeholder="First Name"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Middle Name</label>
+                                        <input class="form-control input-lg" type="email" placeholder="Middle Name"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input class="form-control input-lg" type="email" placeholder="Last Name"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>ID Number</label>
+                                        <input class="form-control" type="email" placeholder="ID Number"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input class="form-control" type="email" placeholder="Phone number"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input class="form-control" type="email" placeholder="Email"/>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row margin-bottom-xl">
+                                <div class="form-group">
+                                    <div class="col-sm-4">
+                                        <label>PAYE</label>
+                                        <input class="form-control" type="text" placeholder="PAYE Number"/>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>NHIF</label>
+                                        <input type="text" class="form-control" placeholder="NHIF Number"/>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>NSSF</label>
+                                        <input type="text" class="form-control" placeholder="NSSF Number"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row margin-bottom-lg">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Role in the company</label>
+                                        <input class="form-control" type="email" placeholder="Role"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Staff Type</label>
+                                        <select class="form-control">
+                                            <option>Salaried</option>
+                                            <option>Contractor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Employee since</label>
+                                        <input class="form-control" type="email" placeholder="Employee Since"/>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row margin-bottom-xl">
+                                <div class="col-sm-6">
+                                    <div class="input-group input-group-lg">
+                                        <span class="app-bg-grey-light input-group-addon border-light">Gross Pay</span>
+                                        <input class="form-control" type="email" placeholder="Amount"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row margin-bottom-md">
+                                <div class="col-sm-3">
+                                    <label>Select payment method</label>
+                                    <select class="form-control">
+                                        <option selected>Bank</option>
+                                        <option>Cash</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row margin-bottom-xl">
+                                <div class="form-group">
+                                    <div class="col-sm-4">
+                                        <label>Bank Name</label>
+                                        <input type="text" class="form-control" placeholder="Bank Name"/>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>Bank Branch</label>
+                                        <input type="text" class="form-control" placeholder="Branch"/>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>Account Number</label>
+                                        <input type="text" class="form-control" placeholder="Branch"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="row text-right">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn app-bg-blue" data-dismiss="modal">Add staff</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- TODO: Modal for Adding Deductions -->
+    <section class="modal deductions-all" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="row">
+                    <div class="col-md-10">
+                        <h2>Add Deduction</h2>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                </div>
+
+                <!-- Modal Body. You can insert iframe here -->
+                <div class="row margin-top-lg">
+                    <div class="col-md-12">
+                        <form>
+                            <div class="form-group">
+                                <table class="table table-responsive table-hover">
+                                    <tr>
+                                        <th><input class="" type="checkbox"/></th>
+                                        <th>Name of deduction</th>
+                                        <th>Account</th>
+                                        <th>Deadline to pay</th>
+                                        <th class="text-right">Amount</th>
+                                    </tr>
+
+                                    <tr>
+                                        <td><input class="" type="checkbox"/></td>
+                                        <td>Rent</td>
+                                        <td>M-PESA</td>
+                                        <td>23 December 2015</td>
+                                        <td class="text-right">80,000</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="row text-right margin-top-lg">
+                    <div class="col-md-12 col-sm-12">
+                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Add Deductions</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+
+<!-- Section for scripts:-->
+<script src="../assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/velocity.min.js" type="text/javascript"></script>
+<script src="../assets/js/velocity.ui.min.js" type="text/javascript"></script>
+<script>
+    $(function () { // let all dom elements are loaded
+        $('.modal')
+                .on('show.bs.modal', function (e) {
+                    $(this).velocity('transition.slideUpIn');
+                })
+                .on('hide.bs.modal', function (e) {
+                    $('.modal').velocity('transition.slideDownOut')
+                });
+    });
+</script>-->

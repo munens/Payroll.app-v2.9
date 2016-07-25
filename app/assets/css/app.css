@@ -1,0 +1,589 @@
+/* App Color Swatch */
+/* Container spacing */
+/* Bootstrap Customizations */
+/* Modified elements */
+.modal {
+  padding-top: 4%;
+}
+
+.modal-content {
+  position: relative;
+  background-color: transparent;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 0;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.modal-backdrop.in {
+  opacity: .95;
+}
+
+.modal-backdrop {
+  background-color: #fff;
+}
+
+/* End of Modified elements */
+/* Globals */
+.app {
+  /* Colors */
+  /* Borders */
+  /* Text */
+}
+
+.app-main {
+  color: #666666;
+}
+
+.app-bg-white {
+  background-color: #fff;
+}
+
+.app-bg-grey {
+  background-color: #cccccc;
+}
+
+.app-bg-grey-light {
+  background-color: #f2f2f2;
+}
+
+.app-bg-grey-dark {
+  background-color: #b3b3b3;
+}
+
+.app-bg-grey-darker {
+  background-color: gray;
+}
+
+.app-bg-grey-darkest {
+  background-color: #4d4d4d;
+}
+
+.app-bg-primary {
+  background-color: #0078a3;
+  color: #fff;
+}
+
+.app-bg-primary a {
+  color: #fff;
+}
+
+.app-bg-primary-dark {
+  background-color: #005270;
+  color: #fff;
+}
+
+.app-bg-primary-dark a {
+  color: #fff;
+}
+
+.app-border {
+  border: #b3b3b3 solid 1px;
+}
+
+.app-border-top {
+  border-top: #b3b3b3 solid 1px;
+}
+
+.app-border-top-light {
+  border-top: #cccccc solid 1px;
+}
+
+.app-border-bottom {
+  border-bottom: #b3b3b3 solid 1px;
+}
+
+.app-border-bottom-light {
+  border-bottom: #cccccc solid 1px;
+}
+
+.app-border-left {
+  border-left: #b3b3b3 solid 1px;
+}
+
+.app-border-left-light {
+  border-left: #cccccc solid 1px;
+}
+
+.app-border-right {
+  border-right: #b3b3b3 solid 1px;
+}
+
+.app-border-right-light {
+  border-right: #cccccc solid 1px;
+}
+
+.app-border-light {
+  border: #cccccc solid 1px;
+}
+
+.app-border-radius {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.app-border:hover {
+  border-color: #b3b3b3;
+}
+
+.app-border-2px {
+  border-width: 2px;
+}
+
+.app-border-3px {
+  border-width: 3px;
+}
+
+.app-border-none {
+  border: none !important;
+}
+
+.app-border-none li {
+  border: none !important;
+}
+
+.app-text {
+  color: #0078a3;
+}
+
+.app-text-primary {
+  color: #0078a3;
+}
+
+.app-text-white {
+  color: #fff;
+}
+
+.app-input-addon {
+  position: relative;
+  font-size: 0;
+  display: table;
+  white-space: nowrap;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.app-input-addon.addon-left .input {
+  float: left;
+  border-radius: 10px;
+  display: table-cell;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.app-input-addon.addon-left .addon {
+  float: left;
+  padding: 11px 0 9px 15px;
+  font-size: 18px;
+  vertical-align: middle;
+  display: table-cell;
+  border: 1px solid #b3b3b3;
+  background: #fff;
+  border-right: 0;
+  border-radius: 10px 0 0 10px;
+  margin-right: 0;
+  color: #999999;
+}
+
+.app-input-addon.addon-right .input {
+  float: left;
+  border-radius: 10px;
+  display: table-cell;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.app-input-addon.addon-right .addon {
+  float: left;
+  padding: 11px 15px 9px 0;
+  font-size: 18px;
+  vertical-align: middle;
+  display: table-cell;
+  border: 1px solid #b3b3b3;
+  background: #fff;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+  margin-left: 0;
+}
+
+.app-table-hd thead tr {
+  background-color: transparent;
+}
+
+.app-table-hd thead tr th {
+  border-bottom: none !important;
+  padding: 10px 15px !important;
+}
+
+.app-table-hd tbody tr {
+  overflow: hidden;
+}
+
+.app-table-hd tbody tr th {
+  border: none !important;
+  padding: 3.75px 15px;
+}
+
+.app-table-hd tbody tr td {
+  border: #cccccc solid 1px;
+  padding: 0 !important;
+  font-size: 18px;
+  vertical-align: middle;
+  background-color: #fff;
+}
+
+.app-table-hd tbody tr td:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.app-table-hd tbody tr td span, .app-table-hd tbody tr td a {
+  padding: 3.75px 15px !important;
+  display: block;
+}
+
+.app-table-hd tbody tr td input {
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 3.75px 15px !important;
+  width: 100%;
+  text-align: inherit;
+  background: rgba(0, 120, 163, 0.05);
+}
+
+.app-table-hd tbody tr.bg-none, .app-table-hd tbody tr.bg-none td {
+  background: none !important;
+  border: none !important;
+}
+
+/* Sizing */
+body {
+  background-color: #fff;
+}
+
+.app {
+  /* Section styling */
+  /* Vars */
+}
+
+.app-page {
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.app-navigation {
+  width: 60px;
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 100000;
+}
+
+.app-navigation .app-nav-icons {
+  font-size: 18px;
+}
+
+.app-navigation .app-nav-icons .selected {
+  font-size: 18px;
+  background: orange;
+  border-right: orange solid 1px;
+  color: #fff;
+}
+
+.app-navigation .app-nav-icons .selected a {
+  font-size: 18px;
+  color: #fff;
+}
+
+.app-navigation .app-nav-icons li.menu-logout {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+}
+
+.app-navigation .app-nav-icons li.menu-logout a {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background: rgba(255, 23, 0, 0.75);
+}
+
+.app-navigation .app-nav-icons li.menu-logout a:hover {
+  background: #ff1700;
+}
+
+.app-navigation .app-nav-icons a {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.app-navigation .app-nav-icons a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.app-navigation .app-nav-icons a .profile {
+  font-size: 36px !important;
+  color: #fff;
+}
+
+.app-main {
+  background: #f7f7f7;
+}
+
+.app-notification-bar {
+  width: 100%;
+}
+
+.app-notification-bar .message li {
+  padding: 7.5px 15px;
+}
+
+.app-main-index {
+  min-height: 100%;
+  background: #f7f7f7;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.app-main-summary {
+  min-height: 100%;
+  background: #f7f7f7;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  right: 25%;
+  left: 60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.app-highlight {
+  width: 350px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.app-content {
+  height: 100%;
+  background: #f7f7f7;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  right: 25%;
+  left: 410px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.app-side {
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: rgba(0, 120, 163, 0.07);
+}
+
+.app-listing .head {
+  background: #00658a;
+  font-size: 24px;
+  color: #fff;
+}
+
+.app-listing .head a:hover {
+  background-color: inherit;
+}
+
+.app-listing .head a.add {
+  border-left: #009ed6 solid 1px;
+  background: #0078a3;
+}
+
+.app-listing .head a.add:hover {
+  background-color: #009ed6;
+  color: #fff;
+}
+
+.app-listing .content-list .section {
+  padding: 15px;
+  border-bottom: #e6e6e6 solid 2px;
+  display: block;
+}
+
+.app-listing .content-list .section:first-child {
+  padding-top: 15px;
+  border-top: none;
+}
+
+.app-listing .content-list ul li {
+  border-bottom: #e6e6e6 solid 1px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.app-listing .content-list ul li a {
+  padding: 7.5px 15px;
+  display: block;
+}
+
+.app-listing .content-list ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+.app-listing .content-list ul li a ul li {
+  padding: 3.75px 15px 0 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+.app-listing .content-list ul li.selected a {
+  background-color: #0078a3;
+  color: #fff;
+}
+
+.app-listing .content-list ul li.selected a:hover {
+  background-color: #0083b2;
+  color: #fff;
+}
+
+.app-listing .content-list ul li.selected a ul li, .app-listing .content-list ul li.selected a ul li a, .app-listing .content-list ul li.selected a ul li a:hover {
+  color: #fff;
+}
+
+.app-listing-add {
+  padding: 30px 30px 0 30px;
+}
+
+.app-listing-view {
+  padding: 30px 30px 0 30px;
+}
+
+.app-summary {
+  color: #fff !important;
+  background-color: rgba(0, 120, 163, 0.6);
+  min-height: 100%;
+}
+
+.app-summary a {
+  color: inherit;
+}
+
+/* Colors and Backgrounds */
+.app-bg-primary {
+  background: #0078a3;
+  color: #fff !important;
+}
+
+.app-bg-blue {
+  background: #0078a3;
+  color: #fff !important;
+}
+
+.app-bg-red {
+  background: red;
+  color: #fff !important;
+}
+
+.app-bg-green {
+  background: #00783d;
+  color: #fff !important;
+}
+
+.app-bg-accent {
+  background: orange;
+  color: #fff !important;
+}
+
+.app-text-primary {
+  color: #0078a3;
+}
+
+.app-text-primary:hover {
+  color: #0078a3;
+}
+
+.app-text-blue {
+  color: #0078a3;
+}
+
+.app-text-blue:hover {
+  color: #0078a3;
+}
+
+.app-text-red {
+  color: red;
+}
+
+.app-text-red:hover {
+  color: red;
+}
+
+.app-text-green {
+  color: #00783d;
+}
+
+.app-text-green:hover {
+  color: #00783d;
+}
+
+.app-text-accent {
+  color: orange;
+}
+
+.app-text-accent:hover {
+  color: orange;
+}
+
+.theme {
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: .5;
+}
+
+.theme-bg-01 {
+  background: url("../images/picjumbo.com_HNCK1814.jpg") center no-repeat;
+  background-size: cover;
+}
