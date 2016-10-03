@@ -1,6 +1,6 @@
 ﻿/*______________________staffAdd:___________________*/
 
-app.controller('staffAddController', function ($scope, $http) {
+app.controller('staffAddController', function ($scope, $http, $location) {
     
     var staffids = [];
     var contractorids = [];
@@ -47,6 +47,8 @@ app.controller('staffAddController', function ($scope, $http) {
 
                 $http.put('/staff/edit/' + response._id, response).success(function (request, response) {
                 });
+
+                $location.href="";
 
             });       
                 /*$http.get('/loggedin')
