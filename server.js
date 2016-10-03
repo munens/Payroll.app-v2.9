@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 
 var LocalStrategy = require('passport-local').Strategy;
 
-var maindb = 'testdb12';
+var maindb = 'mongodb://heroku_8c9x2j8n:8ctvf6rrvqbicrj8c7pjvm6qks@ds031571.mlab.com:31571/heroku_8c9x2j8n';
 var staffCollection = mongojs(maindb, ['staffdb']);
 var payrollCollection = mongojs(maindb, ['payrolldb']);
 var accountCollection = mongojs(maindb, ['accountdb']);
