@@ -1,4 +1,5 @@
-﻿var express = require('express');
+﻿require('dotenv').config();
+var express = require('express');
 var passport = require('passport');
 var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
@@ -7,11 +8,15 @@ var cookieParser = require('cookie-parser');
 
 var LocalStrategy = require('passport-local').Strategy;
 
-var maindb = 'mongodb://heroku_8c9x2j8n:8ctvf6rrvqbicrj8c7pjvm6qks@ds031571.mlab.com:31571/heroku_8c9x2j8n';
+// var maindb = 'mongodb://heroku_8c9x2j8n:8ctvf6rrvqbicrj8c7pjvm6qks@ds031571.mlab.com:31571/heroku_8c9x2j8n';
+var maindb = process.env.MONGODB_URI;
+
 var staffCollection = mongojs(maindb, ['staffdb']);
 var payrollCollection = mongojs(maindb, ['payrolldb']);
 var accountCollection = mongojs(maindb, ['accountdb']);
 //var companyCollection = mongojs(maindb, ['companydb']);
+
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
