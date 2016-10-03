@@ -48,7 +48,7 @@ app.controller('staffAddController', function ($scope, $http, $location) {
                 $http.put('/staff/edit/' + response._id, response).success(function (request, response) {
                 });
 
-                $location.href="";
+                location.href="#/staff";
 
             });       
                 /*$http.get('/loggedin')
