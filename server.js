@@ -51,6 +51,22 @@ passport.deserializeUser(function (user, done){
     done(null, user);
 })
 
+app.post('/account-exist', function(request, response){
+
+    accountCollection.accountdb.find(function (err, users) {
+        for (var i in users) {
+            if (request.body.username == users[i].username) {
+                var user = users[i];
+                response.json(user);
+                return;
+            }
+        }          
+        response.json(0);
+
+    });
+
+})
+
 app.post('/login', passport.authenticate('local'), function (request, response) {
     console.log(request.user);
     request.login(request.user, function (err) {

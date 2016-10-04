@@ -582,3 +582,12 @@ body {
   width: 100%;
   z-index: -1;
 }
+
+/* new stuff */
+.container {
+  margin: 10px;
+}
+
+.container-signup {
+  clear: both;
+}

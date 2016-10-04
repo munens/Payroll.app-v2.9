@@ -12,8 +12,8 @@ app.controller('companySettingsController', function ($scope, $http) {
 
         $http.get('/loggedin')
             .success(function (user) {
-
-                $http.put('/onboarding/' + user._id, $scope.Account)
+                console.log("what is the change: ", $scope.Account, user._id);
+                $http.put('/onboarding/' + user._id, $scope.Account.Company)
                     .success(function (response) {
                         console.log(response);
                     });

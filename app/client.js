@@ -231,19 +231,48 @@ app.controller('agendaController', function ($scope) { });
 
 app.controller('signUpController', function ($scope, $http) {
     
+    $scope.empty_field = false;
+    $scope.account_exist = false;
+    
+    function changeAccountExist(){
+      $scope.account_exist = false;
+    }
+
+    function accountExist(account, response){
+     
+      if(response === 0){
+      
+        $http.post('/signup', account)
+          .success(function (response) {
+            if (response != null) {
+              location.href="#/onboarding";
+            }
+        });
+      } else {
+        $scope.account_exist = true;
+      }
+
+    }
+
     $scope.update = function (account) {
         
         account.CompanyStaffIDs = [];
         account.CompanyContractorIDs = [];
         account.CompanyPayrollIDs = [];
 
-        $http.post('/signup', account)
-        .success(function (response) {
-            if (response != null) {
-                console.log(response);
-            }
-            
-        });
+        if(account.FirstName === "" || account.LastName === "" 
+            || account.Phoneno === "" || account.Email === "" 
+              || account.username === "" || account.password == ""){
+                $scope.empty_field = true;
+        } else {
+            $http.post('/account-exist', account)
+                .success(function(response){
+                    $scope.empty_field = false;
+                    accountExist(account, response);    
+            })
+        }
+
+
     }   
 });
 
