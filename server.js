@@ -503,22 +503,22 @@ app.put('/onboarding/:id', function (request, response) {
                       {
         $set : {
             Company : { 
-                        Name : request.body.Company.Name,
-                        Branch : request.body.Company.Branch,
-                        Location : request.body.Company.Location,
-                        POBox : request.body.Company.POBox,
-                        County : request.body.Company.County,
-                        Bank : request.body.Company.Bank,
-                        Address : request.body.Company.Address,
-                        BankBranch : request.body.Company.BankBranch,
-                        Accountno : request.body.Company.Accountno,
-                        Phoneno : request.body.Company.Phoneno,
-                        Email : request.body.Company.Email,
-                        KRAPinno : request.body.Company.KRAPinno,
-                        NSSFno : request.body.Company.NSSFno,
-                        NHIFno : request.body.Company.NHIFno
-                        //CompanyStaffIDs : request.body.companyStaffIDs,
-                        //CompanyContractorIDs : request.body.companyContractorIDs
+                        Name : request.body.Name,
+                        Branch : request.body.Branch,
+                        Location : request.body.Location,
+                        POBox : request.body.POBox,
+                        County : request.body.County,
+                        Bank : request.body.Bank,
+                        Address : request.body.Address,
+                        BankBranch : request.body.BankBranch,
+                        Accountno : request.body.Accountno,
+                        Phoneno : request.body.Phoneno,
+                        Email : request.body.Email,
+                        KRAPinno : request.body.KRAPinno,
+                        NSSFno : request.body.NSSFno,
+                        NHIFno : request.body.NHIFno
+                        //CompanyStaffIDs : request.bodyStaffIDs,
+                        //CompanyContractorIDs : request.bodyContractorIDs
                          
                 }
         }
