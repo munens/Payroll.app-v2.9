@@ -37,7 +37,7 @@ passport.use(new LocalStrategy(function (username, password, done){
                 && password == users[i].password) {
                 var user = users[i];
                 return done(null, user);
-            }
+            } 
         }
         return done(null, false, { message : 'unable to login' });
     });
@@ -53,14 +53,23 @@ passport.deserializeUser(function (user, done){
 
 app.post('/login', passport.authenticate('local'), function (request, response) {
     console.log(request.user);
-    /* request.login(request.user, function (err) {
+    request.login(request.user, function (err) {
         if (err) {
+            console.log(err);
             return next(err);
         }
         // send this user back to client.
         response.json(request.user);
-    })*/
+    })
+    /*
+    if(err) {
+        console.log(err)
+        response.json(err);
+        //return next(err);
+    }
+    
     response.json(request.user);
+    */
 });
 
 app.post('/logout', function (request, response) {

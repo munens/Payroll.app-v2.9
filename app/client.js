@@ -159,7 +159,12 @@ app.factory('SecurityService', function ($http, $location, $rootScope) {
             $rootScope.currentUser = user;
             //callback here is what is returned.
             callback(user);
-            $location.url('/appmain');
+            //$location.url('/appmain');
+        }).
+        error(function(err){
+            $rootScope.loginAuth = true;
+            $rootScope.error = err;
+            //$location.url('/appmain');
         });
     };
     
@@ -167,6 +172,7 @@ app.factory('SecurityService', function ($http, $location, $rootScope) {
         $http.post('/logout')
         .success(function () {
             $rootScope.currentUser = null;
+            
             callback();
         })
     };
@@ -182,27 +188,31 @@ app.factory('SecurityService', function ($http, $location, $rootScope) {
 
 /*_______________________login___________________*/
 
-app.controller('loginController', function ($scope, $location, $http, SecurityService) {
+app.controller('loginController', function ($scope, $rootScope, $location, $http, SecurityService) {
     
+    
+    $scope.changeLoginEmpty = function(user){
+        if(user.username == "" || user.password == ""){
+            $scope.loginEmpty = false;
+        }
+    }
+    
+
+    $scope.changeLoginAuth = function(){
+        $rootScope.loginAuth = false;
+    }
+
     $scope.login = function (user) {
         
-        //var authentication = {
-        //    username : $scope.username,
-        //    password : $scope.password
-        //};
-        
-        //$http.get('/company');
-        
-        SecurityService.login(user, function (response) {
-            console.log(response);
-            $location.url('/appmain');
-        });
+        if(user.username !== "" || user.password !== ""){
+            SecurityService.login(user, function (response) {
+                console.log(response);
+                $location.url('/appmain');
+            });
+        } else {
+            $scope.loginEmpty = true;
+        }
 
-        //$http.post('/login', authentication)
-        //.success(function (response) {
-        //    console.log('yes');
-
-        //});
 
     };   
     
