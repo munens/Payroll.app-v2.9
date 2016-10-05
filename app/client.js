@@ -414,23 +414,23 @@ var currentDate = function () {
         mm = "January";
     } else if (mm === 2) {
         mm = "February"; 
-    }else if (mm === 3) {
+    } else if (mm === 3) {
         mm = "March";
-    }else if (mm === 4) {
+    } else if (mm === 4) {
         mm = "April";
-    }else if (mm === 5) {
+    } else if (mm === 5) {
         mm = "May";
-    }else if (mm === 6) {
+    } else if (mm === 6) {
         mm = "June";
-    }else if (mm === 7) {
+    } else if (mm === 7) {
         mm = "July";
-    }else if (mm === 8) {
+    } else if (mm === 8) {
         mm = "August";
     } else if (mm === 9) {
         mm = "Septmber";
     } else if (mm === 10) {
         mm = "October";
-    } else if (mm === 2) {
+    } else if (mm === 11) {
         mm = "November";
     } else {
         mm = "December";
@@ -438,6 +438,35 @@ var currentDate = function () {
     
     return today = dd + ' ' + mm + ' ' + yyyy;
 };
+
+var currentDateNum = function () {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear(); 
+
+    return today = dd + ' ' + mm + ' ' + yyyy;
+};
+
+   function compareYr(yr1, yr2, currentYear){
+       return parseInt(yr1, 10) < parseInt(currentYear, 10) && parseInt(currentYear, 10) < parseInt(yr2, 10)
+                ||  parseInt(yr1, 10) == parseInt(currentYear, 10) 
+                    || parseInt(currentYear, 10) == parseInt(yr2, 10) ? true : false ; 
+    }
+
+    function compareMonth(m1, m2, currentMonth){
+        return parseInt(m1, 10) < parseInt(currentMonth, 10) && parseInt(currentMonth, 10) < parseInt(m2, 10)
+                ||  parseInt(m1, 10) == parseInt(currentMonth, 10) 
+                    || parseInt(currentMonth, 10) == parseInt(m2, 10) ? true : false ; 
+    }
+
+    
+    function compareDays(d1, d2, currentDay){
+        return parseInt(d1, 10) < parseInt(currentDay, 10) && parseInt(currentDay, 10) < parseInt(d2, 10)
+                ||  parseInt(d1, 10) == parseInt(currentDay, 10) 
+                    || parseInt(currentDay, 10) == parseInt(d2, 10) ? true : false ; 
+    }
+
 
 /*******************************************Calculators***********************************************/
 var tier1 = 10164;

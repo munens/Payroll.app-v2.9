@@ -9,21 +9,21 @@ app.controller('payrollAddController', function ($scope, $http, payrollService) 
         $http.get('/loggedin')
         .success(function (user) {
 
-               for (var k in response) {
+            for (var k in response) {
 
-                    if (response[k].CompanyID === user._id) { //|| user.CompanyContractorIDs[j] === response[k]._id) {
-                        $scope.items.push(response[k]);
-                        console.log($scope.items);
+                if (response[k].CompanyID === user._id) { //|| user.CompanyContractorIDs[j] === response[k]._id) {
+                    $scope.items.push(response[k]);
+                    console.log($scope.items);
 
-                        $scope.numberOfStaff = $scope.items.length;
+                    $scope.numberOfStaff = $scope.items.length;
 
-                        if ($scope.items.length > 0) {
-                            $scope.staffExist = true;
-                        } else {
-                            $scope.staffExist = false;
-                        }
+                    if ($scope.items.length > 0) {
+                        $scope.staffExist = true;
+                    } else {
+                        $scope.staffExist = false;
                     }
                 }
+            }
         });
 
     });

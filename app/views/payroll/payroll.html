@@ -32,7 +32,8 @@
 
                         <tbody>
                         <tr ng-repeat="p in itemsInTable">
-                            <td ng-show="inprogress"><i class="fa fa-circle" title="Status">&nbsp;</i></td>
+                            <td ng-show="inProgress(p)"><i class="fa fa-circle" title="Status">&nbsp;</i></td>
+                            <td ></td>
                             <td>
                                 <span>
                                     <a href="#/payroll/view/{{p._id}}">{{p.Name}}</a>
