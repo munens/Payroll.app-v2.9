@@ -203,12 +203,15 @@ app.controller('loginController', function ($scope, $rootScope, $location, $http
     }
 
     $scope.login = function (user) {
-        
-        if(user.username !== "" || user.password !== ""){
-            SecurityService.login(user, function (response) {
-                console.log(response);
-                $location.url('/appmain');
-            });
+        if(user){
+            if(user.username !== "" || user.password !== ""){
+                SecurityService.login(user, function (response) {
+                    console.log(response);
+                    $location.url('/appmain');
+                });
+            } else {
+                $scope.loginEmpty = true;
+            }
         } else {
             $scope.loginEmpty = true;
         }
