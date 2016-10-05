@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <label>County</label>
-                                <input  type="text" class="form-control" placeholder=""/>
+                                <input ng-model="Account.Company.County" type="text" class="form-control" placeholder=""/>
                             </div>
 
                         </div>
@@ -120,7 +120,7 @@
                     <div class="row padding-lg">
                         <div class="col-sm-11 clearfix margin-bottom-xl text-right">
                         <!--<button href="#/staffview" class="btn btn-hd strong margin-right-md">Cancel</button>-->
-                            <a href="#/appmain" ng-click="update()" class="btn btn-hd btn-md btn-primary strong">Update Info</a>
+                            <a ng-click="update()" class="btn btn-hd btn-md btn-primary strong">Update Info</a>
                         </div>
                     </div>
 

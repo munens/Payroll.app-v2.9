@@ -88,6 +88,18 @@ app.post('/login', passport.authenticate('local'), function (request, response) 
     */
 });
 
+app.get('/account/:id', function (request, response) {
+    
+    accountCollection.accountdb.findOne({ _id: mongojs.ObjectId(request.params.id) }, 
+        function (err, docs) {
+          if(err){
+            response.json(err);  
+          }
+          response.json(docs);
+    });
+    
+});
+
 app.post('/logout', function (request, response) {
     request.logOut();
     response.json(200);
