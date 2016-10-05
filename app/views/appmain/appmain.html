@@ -23,7 +23,7 @@
                 <div class="row padding-top-xl">
                     <div class="col-sm-4 col-lg-3">
 
-                        <div class="col-sm-12">
+                        <div ng-show="payrollExist" class="col-sm-12">
                             <a href="#" class="h2">
                                 Payroll</ a>
                                 <hr class="full-width" />
@@ -40,6 +40,22 @@
                                     payroll cycle
                                 </a>
                         </div>
+                        <div ng-show="!payrollExist" class="col-sm-12">
+                            <a href="#" class="h2">
+                                Payroll</ a>
+                                <hr class="full-width" />
+
+                                <ul class="list-unstyled">
+                                    <li class="padding-bottom-md"><h3>There are no payrolls in place at the moment. </h3></ li>
+                                    <li class="padding-bottom-md">
+                                        <a href="#/payrolladd" class="margin-top-lg strong btn btn-hd app-bg-green">
+                                            Add a new payroll cycle here.
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                        </div>
+                        
                     </div>
 
                     <div class="col-sm-4 col-lg-3 border-left border-white">
@@ -47,7 +63,7 @@
                             <li class="padding-bottom-lg">
                                 <h3 class=""> Net Payments</h3>
                                 <ul class="list-unstyled">
-                                    <li> Employees: </li>
+                                    <li> Employees: {Total payments to employees}</li>
                                     <li> Contractors: {Total payments to contractors}</li>
                                     <li class="padding-top-sm padding-bottom-sm"><hr class="no-pad" /></ li>
                                     <li><h4>Ksh. {{payroll.TotalPayment}}</h4></ li>

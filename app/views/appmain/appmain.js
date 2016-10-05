@@ -3,7 +3,7 @@
 app.controller('appmainController', function ($scope, $rootScope, $http, $location /*, appmainService*/) {
     
     $scope.date = currentDate();
-
+    $scope.payrollExist = false;
     $scope.templates = [
         {
             name: "nav.html",
@@ -24,7 +24,6 @@ app.controller('appmainController', function ($scope, $rootScope, $http, $locati
 
       if(compareYr(period_from.split("-")[0], period_to.split("-")[0], currentDate.split(" ")[2] )
            && compareMonth(period_from.split("-")[1], period_to.split("-")[1], currentDate.split(" ")[1])){
-            
             return true;
       }
       return false;
