@@ -448,16 +448,18 @@ var currentDateNum = function () {
     return today = dd + ' ' + mm + ' ' + yyyy;
 };
 
-   function compareYr(yr1, yr2, currentYear){
+    function compareYr(yr1, yr2, currentYear){
+
+       //console.log(parseInt(yr1, 10) + " , ", parseInt(yr2, 10) + " , ", parseInt(currentYear, 10));
        return parseInt(yr1, 10) < parseInt(currentYear, 10) && parseInt(currentYear, 10) < parseInt(yr2, 10)
                 ||  parseInt(yr1, 10) == parseInt(currentYear, 10) 
                     || parseInt(currentYear, 10) == parseInt(yr2, 10) ? true : false ; 
     }
 
     function compareMonth(m1, m2, currentMonth){
-        return parseInt(m1, 10) < parseInt(currentMonth, 10) && parseInt(currentMonth, 10) < parseInt(m2, 10)
-                ||  parseInt(m1, 10) == parseInt(currentMonth, 10) 
-                    || parseInt(currentMonth, 10) == parseInt(m2, 10) ? true : false ; 
+        return parseInt(m1) < parseInt(currentMonth) && parseInt(currentMonth) < parseInt(m2)
+                ||  parseInt(m1) == parseInt(currentMonth) 
+                    || parseInt(m2)  == parseInt(currentMonth) ? true : false ; 
     }
 
     

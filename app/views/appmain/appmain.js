@@ -22,9 +22,9 @@ app.controller('appmainController', function ($scope, $rootScope, $http, $locati
         
       console.log(period_from + ", ", period_to + ", ", currentDate);
 
-      if(compareYr(period_from.split("-")[0], period_to.split("-")[0])
-        && compareMonth(period_from.split("-")[1], period_to.split("-")[1]), currentDate.split(" ")[1]
-          && compareDays(period_from.split("-")[2], period_to.split("-")[2], currentDate.split(" ")[2])){
+      if(compareYr(period_from.split("-")[0], period_to.split("-")[0], currentDate.split(" ")[2] )
+           && compareMonth(period_from.split("-")[1], period_to.split("-")[1], currentDate.split(" ")[1])){
+            
             return true;
       }
       return false;
@@ -33,6 +33,7 @@ app.controller('appmainController', function ($scope, $rootScope, $http, $locati
     function findPayrollInProgress(payrolls){
       for(payroll in payrolls){
         if(inProgress(payrolls[payroll])){
+          console.log(payrolls[payroll]);
           $scope.payrollExist = true;
           $scope.payroll = payrolls[payroll];
           return;

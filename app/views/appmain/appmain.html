@@ -47,23 +47,23 @@
                             <li class="padding-bottom-lg">
                                 <h3 class=""> Net Payments</h3>
                                 <ul class="list-unstyled">
-                                    <li> Employees: {Total payments to employees}</li>
+                                    <li> Employees: </li>
                                     <li> Contractors: {Total payments to contractors}</li>
                                     <li class="padding-top-sm padding-bottom-sm"><hr class="no-pad" /></ li>
-                                    <li><h4>Ksh. {Total payments to employees and contractors}</h4></ li>
+                                    <li><h4>Ksh. {{payroll.TotalPayment}}</h4></ li>
                                 </ul>
                             </li>
                             <li class="padding-bottom-lg">
                                 <h3 class="">
                                     Taxes</ h3>
                                     <ul class="list-unstyled">
-                                        <li> PAYE: Ksh. {PAYE}</li>
-                                        <li> NHIF: Ksh. {NHIF tax}</li>
-                                        <li> NSSF: Ksh. {NSSF tax}</li>
+                                        <li> PAYE: Ksh. {{payroll.Tax.totalPAYE}}</li>
+                                        <li> NHIF: Ksh. {{payroll.Tax.totalNHIF}}</li>
+                                        <li> NSSF: Ksh. {{payroll.Tax.totalNSSF}}</li>
                                         <li> Withholding: Ksh. {?}</li>
                                         <li class="padding-top-sm padding-bottom-sm"><hr class="no-pad" /></ li>
                                         <li>
-                                            <h4>Ksh. {Total Taxes(Payroll)} </h4>
+                                            <h4>Ksh. {{payroll.Tax.totalTax}} </h4>
                                         </li>
                                     </ul>
                             </li>

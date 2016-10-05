@@ -12,13 +12,17 @@ app.controller('payrollController', function ($rootScope, $scope, $http) {
         
         console.log(period_from + ", ", period_to + ", ", currentDate);
 
-        if(compareYr(period_from.split("-")[0], period_to.split("-")[0])
-           && compareMonth(period_from.split("-")[1], period_to.split("-")[1]), currentDate.split(" ")[1]
-             && compareDays(period_from.split("-")[2], period_to.split("-")[2], currentDate.split(" ")[2])){
-               return true;
+        //console.log(compareYr(period_from.split("-")[0], period_to.split("-")[0], currentDate.split(" ")[2]));
+        //console.log(compareMonth(period_from.split("-")[1], period_to.split("-")[1], currentDate.split(" ")[1]));
+
+        if(compareYr(period_from.split("-")[0], period_to.split("-")[0], currentDate.split(" ")[2] )
+           && compareMonth(period_from.split("-")[1], period_to.split("-")[1], currentDate.split(" ")[1])){       
+            return true;
         }
         return false;
     }
+
+    
 
     function getPayrollLength(items){
         $scope.totalPayroll = items.length;
