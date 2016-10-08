@@ -36,7 +36,7 @@
                                     </li>
                                 </ul>
                                 <a href="#/payrolladd" class="margin-top-lg strong btn btn-hd app-bg-green">
-                                    Add a new
+                                    Create a new
                                     payroll cycle
                                 </a>
                         </div>
@@ -49,7 +49,7 @@
                                     <li class="padding-bottom-md"><h3>There are no payrolls in place at the moment. </h3></ li>
                                     <li class="padding-bottom-md">
                                         <a href="#/payrolladd" class="margin-top-lg strong btn btn-hd app-bg-green">
-                                            Add a new payroll cycle here.
+                                            Create a new payroll cycle here.
                                         </a>
                                     </li>
                                 </ul>
@@ -58,7 +58,7 @@
                         
                     </div>
 
-                    <div class="col-sm-4 col-lg-3 border-left border-white">
+                    <div ng-show="payrollExist" class="col-sm-4 col-lg-3 border-left border-white">
                         <ul class="list-unstyled">
                             <li class="padding-bottom-lg">
                                 <h3 class=""> Net Payments</h3>
@@ -73,13 +73,13 @@
                                 <h3 class="">
                                     Taxes</ h3>
                                     <ul class="list-unstyled">
-                                        <li> PAYE: Ksh. {{payroll.Tax.totalPAYE}}</li>
-                                        <li> NHIF: Ksh. {{payroll.Tax.totalNHIF}}</li>
-                                        <li> NSSF: Ksh. {{payroll.Tax.totalNSSF}}</li>
-                                        <li> Withholding: Ksh. {?}</li>
+                                        <li> PAYE: Ksh. </li>
+                                        <li> NHIF: Ksh. </li>
+                                        <li> NSSF: Ksh. </li>
+                                        <li> Withholding: Ksh. </li>
                                         <li class="padding-top-sm padding-bottom-sm"><hr class="no-pad" /></ li>
                                         <li>
-                                            <h4>Ksh. {{payroll.Tax.totalTax}} </h4>
+                                            <h4>Ksh. </h4>
                                         </li>
                                     </ul>
                             </li>
@@ -93,10 +93,50 @@
                             <li>
                                 <hr />
                                 <h6> Total payroll</h6>
-                                <h3> Ksh. {Total payroll of company}</h3>
+                                <h3> Ksh. </h3>
                             </li>
                         </ul>
                     </div>
+
+                    <div ng-show="!payrollExist" class="col-sm-4 col-lg-3 border-left border-white">
+                        <ul class="list-unstyled">
+                            <li class="padding-bottom-lg">
+                                <h3 class=""> Net Payments</h3>
+                                <ul class="list-unstyled">
+                                    <li> Employees: </li>
+                                    <li> Contractors: </li>
+                                    <li class="padding-top-sm padding-bottom-sm"><hr class="no-pad" /></ li>
+                                    <li><h4>Ksh. </h4></ li>
+                                </ul>
+                            </li>
+                            <li class="padding-bottom-lg">
+                                <h3 class="">
+                                    Taxes</ h3>
+                                    <ul class="list-unstyled">
+                                        <li> PAYE: Ksh. </li>
+                                        <li> NHIF: Ksh. </li>
+                                        <li> NSSF: Ksh. </li>
+                                        <li> Withholding: Ksh. </li>
+                                        <li class="padding-top-sm padding-bottom-sm"><hr class="no-pad" /></ li>
+                                        <li>
+                                            <h4>Ksh. </h4>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li class="padding-bottom-lg hidden">
+                                <h3 class=""> Bonus and Deductions</h3>
+                                <ul class="list-unstyled">
+                                    <li> No bonus</li>
+                                    <li> No deductions</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <hr />
+                                <h6> Total payroll</h6>
+                                <h3> Ksh. </h3>
+                            </li>
+                        </ul>
+                    </div> 
 
                     <div class="col-sm-4 col-lg-3">
                         <div class="row text-center">
@@ -111,7 +151,7 @@
 
                 <div class="row margin-top-md">
                     <div class="col-sm-12">
-                        <div class="col-sm-12">
+                        <div style="margin-bottom: 25px;" class="col-sm-12">
                             <a href="#/staff" class="h2">
                                 Staff</ a>
                                 <ul class="list-unstyled h4">
@@ -125,9 +165,10 @@
 
                     </div>
                 
+                
 
-                <div class="row margin-top-xl">
-                    <div class="col-sm-12">
+                <div style="margin-top: 20px;" ng-show="payrollExist" class="row margin-top-xl">
+                    <div  class="col-sm-12">
                         <div class="col-sm-12">
                             <a href="#/companysettings" class="h2">
                                 Company</ a>
@@ -135,6 +176,24 @@
                                     <li class="margin-top-md"> KRA PIN: <strong> {{KRAPin}}</strong>. Due by 9th of following month </li>
                                     <li> NHIF Number: <strong> {{NHIFno}}</ strong>. Due by {Date of NHIF payment}th of following month </li>
                                     <li> NSSF Number: <strong> {{NSSFno}}</ strong>. Due by {Date of NSSF payment}th of following month </li>
+
+                                    <li class="margin-top-md">
+                                        <a href="#/companysettings" class="strong btn app-bg-accent btn-hd">Edit Company Details </a>
+
+                                </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div ng-show="!payrollExist" class="row margin-top-xl">
+                    <div class="col-sm-12">
+                        <div class="col-sm-12">
+                            <a href="#/companysettings" id="appmain-company" class="h2">
+                                Company</ a>
+                                <ul class="list-unstyled">
+                                    <li class="margin-top-md"> KRA PIN: <strong> {{KRAPin}}</strong>.  </li>
+                                    <li> NHIF Number: <strong> {{NHIFno}}</ strong>.  </li>
+                                    <li> NSSF Number: <strong> {{NSSFno}}</ strong>.  </li>
 
                                     <li class="margin-top-md">
                                         <a href="#/companysettings" class="strong btn app-bg-accent btn-hd">Edit Company Details </a>
